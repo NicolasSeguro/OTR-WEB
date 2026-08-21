@@ -1914,6 +1914,78 @@ a.scard {
   padding-bottom: 90px;
 }
 
+/* ---- LEGAL PAGES (Cookie Policy / Privacy Notice — provisional content) ---- */
+.page-legal {
+  background: var(--otr-light);
+}
+
+.legal-page {
+  padding: 150px 0 100px;
+}
+
+.legal-page-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.legal-back {
+  display: inline-block;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 15px;
+  color: var(--otr-dark);
+  opacity: 0.7;
+  margin-bottom: 28px;
+}
+
+.legal-back:hover {
+  opacity: 1;
+}
+
+.legal-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 44px;
+  color: var(--otr-dark);
+  margin: 0 0 28px;
+}
+
+.legal-notice {
+  background: #FBF0D9;
+  border: 1px solid #E8D18C;
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5C4A12;
+  margin-bottom: 44px;
+}
+
+.legal-section {
+  margin-bottom: 32px;
+}
+
+.legal-section h2 {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--otr-dark);
+  margin: 0 0 10px;
+}
+
+.legal-section p {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #33323B;
+}
+
+.legal-section a {
+  color: var(--otr-blue-link);
+  text-decoration: underline;
+}
+
 /* ---- BLOG PAGE (Figma node 136:163) ---- */
 .page-blog {
   background: #F5F5F0;
