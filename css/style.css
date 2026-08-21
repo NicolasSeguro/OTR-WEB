@@ -37,6 +37,15 @@
   font-display: swap;
 }
 
+:root {
+  --otr-dark: #15141D;
+  --otr-light: #F5F3EF;
+  --otr-blue: #0143D8;
+  --otr-blue-link: #0148E9;
+  --otr-white: #FFFFFF;
+  --otr-gray-label: #8A8A8A;
+}
+
 /* ---- RESET & BASE ---- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -46,6 +55,26 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+section[id],
+div[id] {
+  scroll-margin-top: 110px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--otr-blue-link);
+  outline-offset: 3px;
 }
 
 body {
@@ -142,6 +171,77 @@ img {
 
 .navbar-links li a:hover {
   opacity: 0.7;
+}
+
+/* ---- MOBILE NAV MENU ---- */
+.navbar-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.navbar-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--otr-white);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar-menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  width: calc(100% - 32px);
+  max-width: 320px;
+  background: var(--otr-dark);
+  border-radius: 20px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.mobile-menu a {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 17px;
+  color: var(--otr-white);
+  padding: 12px 10px;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ---- HERO SECTION ---- */
@@ -1624,15 +1724,6 @@ a.scard {
   opacity: 0.9;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
 /* ---- CONTACT PAGE (Figma node 150:2) ---- */
 .page-contact {
   background: #15141D;
@@ -2228,6 +2319,19 @@ a.scard {
 
   .navbar-links {
     display: none;
+  }
+
+  .navbar-menu-toggle {
+    display: flex;
+  }
+
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: 84px;
   }
 
   .svc-inner {

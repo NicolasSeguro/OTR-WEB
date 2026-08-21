@@ -50,9 +50,9 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="navbar-pill">
-      <div class="navbar-logo">
+      <a class="navbar-logo" href="index.html" aria-label="OTR inicio">
         <span class="logo-text">OTR.</span>
-      </div>
+      </a>
       <ul class="navbar-links">
         <li><a href="service.html">SERVICE</a></li>
         <li><a href="about.html">ABOUT</a></li>
@@ -60,6 +60,16 @@
         <li><a href="blog.html">BLOG</a></li>
         <li><a href="contact.html">CONTACT</a></li>
       </ul>
+      <button class="navbar-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="service.html">SERVICE</a>
+      <a href="about.html">ABOUT</a>
+      <a href="portfolio.html">PORTFOLIO</a>
+      <a href="blog.html">BLOG</a>
+      <a href="contact.html">CONTACT</a>
     </div>
   </nav>
 
