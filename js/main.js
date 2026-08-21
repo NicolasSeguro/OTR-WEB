@@ -72,16 +72,27 @@ const portfolioCards = document.querySelectorAll('.pgrid-card');
 if (portfolioFilters.length && portfolioCards.length) {
   portfolioFilters.forEach(btn => {
     btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+      // Figma no tiene un pill "todos": por defecto no hay ninguno activo y se
+      // ven todas las cards. Clickear un filtro ya activo lo apaga y vuelve
+      // a mostrar todo; clickear otro lo activa en exclusiva.
+      const alreadyActive = btn.classList.contains('is-active');
 
       portfolioFilters.forEach(b => {
-        b.classList.toggle('is-active', b === btn);
-        b.setAttribute('aria-pressed', String(b === btn));
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
       });
 
+      if (alreadyActive) {
+        portfolioCards.forEach(card => card.classList.remove('is-hidden'));
+        return;
+      }
+
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      const filter = btn.getAttribute('data-filter');
       portfolioCards.forEach(card => {
-        const cat = card.getAttribute('data-cat');
-        const show = filter === 'all' || cat === filter;
+        const show = card.getAttribute('data-cat') === filter;
         card.classList.toggle('is-hidden', !show);
       });
     });

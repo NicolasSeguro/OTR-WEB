@@ -1410,33 +1410,6 @@ a.scard {
   transform: scale(1.03);
 }
 
-.about-media-avatar {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid #FFFFFF;
-  background: url('../images/about/reality-avatar.png') center / cover no-repeat;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-  z-index: 2;
-}
-
-.about-media-time {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 2;
-  font-family: 'Clash Grotesk', sans-serif;
-  font-size: 13px;
-  color: #FFFFFF;
-  background: rgba(0,0,0,0.72);
-  border-radius: 6px;
-  padding: 5px 9px;
-  letter-spacing: 0.02em;
-}
-
 .about-team {
   background: #F5F5F0;
   padding: 70px 0 110px;
@@ -1479,21 +1452,6 @@ a.scard {
   font-size: 16px;
   color: #666666;
   margin: 0 0 16px;
-}
-
-.about-role-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.about-role-pills span {
-  font-family: 'Clash Grotesk', sans-serif;
-  font-size: 13px;
-  color: #FFFFFF;
-  background: #15141D;
-  border-radius: 999px;
-  padding: 8px 14px;
 }
 
 .about-team-grid {
@@ -2338,11 +2296,6 @@ a.scard {
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;
-  }
-
-  .about-media-avatar {
-    width: 36px;
-    height: 36px;
   }
 
   .portfolio-filters {

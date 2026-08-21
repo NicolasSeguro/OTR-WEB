@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- OTR — On The Rocks | Sitemap para agentes de IA y LLMs -->
-<!-- Este sitemap está optimizado para crawlers de IA como GPTBot, ClaudeBot, PerplexityBot -->
+<!-- Optimizado para crawlers de IA como GPTBot, ClaudeBot, PerplexityBot, Google-Extended -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Página principal — contenido completo sobre OTR -->
+  <!-- Datos estructurados JSON-LD — la fuente más densa y confiable -->
   <url>
-    <loc>https://www.ontherocks.com.ar/</loc>
-    <lastmod>2024-12-01</lastmod>
+    <loc>https://www.ontherocks.com.ar/ai-feed.jsonld</loc>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Página para agentes IA — resumen estructurado -->
-  <url>
-    <loc>https://www.ontherocks.com.ar/ai/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- llms.txt — instrucciones para LLMs -->
+  <!-- llms.txt — resumen para LLMs -->
   <url>
     <loc>https://www.ontherocks.com.ar/llms.txt</loc>
-    <lastmod>2024-12-01</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -30,17 +22,46 @@
   <!-- llms-full.txt — documentación completa para LLMs -->
   <url>
     <loc>https://www.ontherocks.com.ar/llms-full.txt</loc>
-    <lastmod>2024-12-01</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ai-feed.jsonld — datos estructurados para IA -->
+  <!-- Página para agentes IA — resumen HTML estructurado -->
   <url>
-    <loc>https://www.ontherocks.com.ar/ai-feed.jsonld</loc>
-    <lastmod>2024-12-01</lastmod>
+    <loc>https://www.ontherocks.com.ar/ai/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Páginas del sitio con contenido sustantivo -->
+  <url>
+    <loc>https://www.ontherocks.com.ar/</loc>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ontherocks.com.ar/service.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ontherocks.com.ar/about.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ontherocks.com.ar/portfolio.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
