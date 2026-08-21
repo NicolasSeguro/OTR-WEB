@@ -77,6 +77,16 @@ div[id] {
   outline-offset: 3px;
 }
 
+/* Pressed-state feedback for the site's pill-shaped buttons/links */
+.contact-btn:active,
+.contact-submit:active,
+.svc-cta:active,
+.blog-empty-cta:active,
+.portfolio-filter:active,
+.navbar-menu-toggle:active {
+  transform: scale(0.96);
+}
+
 body {
   font-family: 'Clash Grotesk', 'Inter', sans-serif;
   background: #F5F3EF;
@@ -324,7 +334,7 @@ img {
   font-weight: 400;
   font-size: 20px;
   line-height: 55px;
-  color: #666666;
+  color: var(--otr-gray-label);
   display: block;
   position: absolute;
   left: 80px;
@@ -338,7 +348,7 @@ img {
 }
 
 .section-label-gray {
-  color: #666666;
+  color: var(--otr-gray-label);
 }
 
 /* Figma: "Somos la agencia de referencia..." — left:72px, top:866px (page) = top:173px (section) */
@@ -669,7 +679,7 @@ img {
   font-weight: 400;
   font-size: 20px;
   line-height: 55px;
-  color: #666666;
+  color: var(--otr-gray-label);
   display: block;
   padding-top: 86px;
   letter-spacing: 0.05em;
@@ -813,7 +823,7 @@ a.scard {
   font-weight: 400;
   font-size: 20px;
   line-height: 55px;
-  color: #666666;
+  color: var(--otr-gray-label);
   display: block;
   padding-top: 90px;
   padding-left: 80px;
@@ -1161,6 +1171,17 @@ a.scard {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  /* Keep the functional end-state (X shape, pressed scale) but drop the
+     animated transition between states. */
+  .navbar-menu-toggle span,
+  .contact-btn,
+  .contact-submit,
+  .svc-cta,
+  .blog-empty-cta,
+  .portfolio-filter {
+    transition: none !important;
   }
 }
 
