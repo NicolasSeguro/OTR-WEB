@@ -1,0 +1,56 @@
+PORTFOLIO SECTION — FIGMA ANALYSIS
+====================================
+
+SECTION BOUNDS:
+- Section starts at page top: 1386px (= 693 hero + 693 our-work)
+- Section ends at: 2291px (= 1386 + 452 top-row + 227 bottom-row + 226 label area)
+
+LABEL "002 PORTFOLIO":
+- page top: 1413px → section offset: 27px
+- left: 59px, width: 1124px, height: 55px
+- font: Clash Grotesk 20px, line-height: 55px, color: #FFFFFF
+
+TOP ROW (3 cards, each 428×452px):
+- Card 1 (Argentina Fintech Forum): left:0 (or -2px), top:1386px
+  - bg: gradient-card1.png (Gradient016.png) — blue-gray gradient
+  - icon: Group2 (triangle shape, 52×47px) at left:50.5px, top:1524px → section offset: 138px
+  - title: "Argentina Fintech Forum" left:59px, top:1593px → section offset: 207px, 50px, line-height:45px
+  - service: "Producción audiovisual y de eventos" left:59px, top:1670px → offset: 284px, 20px
+  - num: "2.1" left:59px, top:1783px → offset: 397px, 20px
+
+- Card 2 (Draper Cygnus): left:427px, top:1386px
+  - bg: gradient-card2.png (Gradient015.png) — dark blue gradient, opacity:0.8, rotate:-180deg
+  - icon: Group3 (4 overlapping ellipses, 49×50px) at left:482px, top:1524px → card-relative: left:55px, top:138px
+  - title: "Draper Cygnus" left:478px, top:1593px → card-relative: left:51px, top:207px, 50px
+  - service: "Branding & Digital Content" left:480px, top:1670px → card-relative: left:53px, top:284px, 20px
+  - num: "2.2" left:482px, top:1783px → card-relative: left:55px, top:397px
+
+- Card 3 (Melian): left:852px, top:1385px
+  - bg: gradient-card3.png (Gradient017.png) — similar blue-gray
+  - icon: Group1 (two rectangles + circle, 44×44px) at left:908px, top:1524px → card-relative: left:56px, top:139px
+  - title: "Melian" left:908px, top:1616px → card-relative: left:56px, top:231px, 50px
+  - service: "Medios, PR & Asuntos Públicos" left:908px, top:1670px → card-relative: left:56px, top:285px, 20px
+  - num: "2.3" left:908px, top:1783px → card-relative: left:56px, top:398px
+
+BOTTOM ROW (2 cards):
+- Card 4 (ARGY): left:0, top:1837px (= 1386+452-1 ≈ 1837), width:427px, height:227px
+  - bg: gradient-card4.png (Gradient018.png) — wide gray-blue gradient, rotate:90deg
+  - title: "ARGY" left:59px, top:1876px → card-relative: left:59px, top:39px, 50px
+  - service: "Podcasting & Streaming" left:59px, top:1947px → card-relative: left:59px, top:110px, 20px
+  - num: "2.4" left:59px, top:2002px → card-relative: left:59px, top:165px
+
+- Card 5 (ByBit): left:427px (or ~428), top:2065px, width:853px (1280-427), height:227px
+  - bg: rectangle72.png — deep blue gradient (flipped: matrix(1,0,0,-1,0,0))
+  - title: "ByBit" left:59px (card-relative), top:2101px → card-relative: left:59px, top:36px, 50px
+  - service: "Paid media" left:59px, top:2172px → card-relative: left:59px, top:107px, 20px
+  - num: "2.5" left:59px, top:2227px → card-relative: left:59px, top:162px
+
+BLUE BAR (Rectangle 8):
+- top:2291px, width:1280px, height:131px, bg:#0143D8
+- "Ver más": left:96px, top:2333px → bar-relative: top:42px, width:1124px, text-align:right, 40px, #FFFFFF
+
+ICONS (SVG paths from Figma):
+- Group2 (card 1 - AFF): Triangle made of 3 vectors (Vector 7, 8, 9)
+  - 3 lines at 0°, 120°, -120° forming triangle, border:1px solid white
+- Group3 (card 2 - Draper): 4 ellipses 36.5×36.5px rotated at 20°, 65°, 110°, 155°
+- Group1 (card 3 - Melian): Rectangle9 (39.53×22.32, rotate:15.43°) + Rectangle10 (rotate:73.69°) + Vector6 (circle 32×31)

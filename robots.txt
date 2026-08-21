@@ -1,0 +1,77 @@
+# OTR — On The Rocks | robots.txt
+# https://www.ontherocks.com.ar/robots.txt
+
+# ---- Motores de búsqueda tradicionales ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# ---- Bots de IA — PERMITIDOS ----
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI / Gemini
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl (base de datos usada por muchos LLMs)
+User-agent: CCBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Mistral
+User-agent: MistralBot
+Allow: /
+
+# ---- Regla general ----
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# ---- Sitemaps ----
+Sitemap: https://www.ontherocks.com.ar/sitemap.xml
+Sitemap: https://www.ontherocks.com.ar/sitemap-ai.xml
+
+# ---- Archivos para IA ----
+# llms.txt: https://www.ontherocks.com.ar/llms.txt
+# llms-full.txt: https://www.ontherocks.com.ar/llms-full.txt
+# ai-feed.jsonld: https://www.ontherocks.com.ar/ai-feed.jsonld
+# Página para agentes IA: https://www.ontherocks.com.ar/ai/

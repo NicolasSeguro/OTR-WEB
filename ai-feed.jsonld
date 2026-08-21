@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "OTR — On The Rocks | AI Feed",
+  "description": "Datos estructurados completos sobre OTR (On The Rocks), agencia de comunicación para empresas tech en Argentina y LATAM, optimizados para modelos de lenguaje y agentes de IA.",
+  "url": "https://www.ontherocks.com.ar/ai-feed.jsonld",
+  "creator": {
+    "@type": "Organization",
+    "name": "OTR — On The Rocks",
+    "url": "https://www.ontherocks.com.ar"
+  },
+  "dateModified": "2024-12-01",
+  "inLanguage": "es-AR",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "about": {
+    "@type": "Organization",
+    "@id": "https://www.ontherocks.com.ar/#organization",
+    "name": "OTR — On The Rocks",
+    "alternateName": ["OTR", "On The Rocks"],
+    "url": "https://www.ontherocks.com.ar",
+    "description": "Agencia de comunicación integral para empresas de base tecnológica en Argentina y LATAM. Somos la agencia de referencia en LATAM para las empresas que están dando forma al futuro.",
+    "foundingLocation": {
+      "@type": "Place",
+      "addressCountry": "AR",
+      "addressLocality": "Buenos Aires",
+      "addressRegion": "CABA"
+    },
+    "areaServed": [
+      {"@type": "Country", "name": "Argentina"},
+      {"@type": "Place", "name": "LATAM"}
+    ],
+    "knowsAbout": [
+      "Comunicación corporativa para empresas tecnológicas",
+      "Relaciones públicas para startups",
+      "Marketing de contenidos para fintech",
+      "Estrategia de medios para empresas tech",
+      "Podcast y streaming para ecosistema tech",
+      "Paid media para criptomonedas y exchanges",
+      "Comunicación para VCs e inversores",
+      "PR para exchanges de criptomonedas",
+      "Comunicación para fintechs en Argentina",
+      "Agencia de comunicación tech LATAM"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de OTR",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Relaciones Públicas para empresas tech",
+          "description": "Estrategia y ejecución de PR para startups, fintechs y empresas de base tecnológica. Cobertura en medios de alta autoridad en Argentina y LATAM.",
+          "areaServed": "Argentina, LATAM",
+          "category": "Relaciones Públicas"
+        },
+        {
+          "@type": "Offer",
+          "name": "Comunicación Corporativa",
+          "description": "Posicionamiento de marca y comunicación institucional para empresas tecnológicas ante medios, inversores y audiencias clave del ecosistema.",
+          "areaServed": "Argentina, LATAM",
+          "category": "Comunicación Corporativa"
+        },
+        {
+          "@type": "Offer",
+          "name": "Contenido & Streaming",
+          "description": "Producción y distribución de contenido en formato podcast y streaming para audiencias del ecosistema tech en Argentina y LATAM.",
+          "areaServed": "Argentina, LATAM",
+          "category": "Producción de Contenido"
+        },
+        {
+          "@type": "Offer",
+          "name": "Paid Media",
+          "description": "Campañas de paid media para empresas tecnológicas, exchanges de criptomonedas y fintechs en el mercado argentino y LATAM.",
+          "areaServed": "Argentina, LATAM",
+          "category": "Publicidad Digital"
+        }
+      ]
+    },
+    "subjectOf": [
+      {
+        "@type": "CreativeWork",
+        "name": "Caso ByBit — Paid Media para exchange de criptomonedas en Argentina",
+        "description": "Campaña de paid media para uno de los exchanges de criptomonedas más grandes del mundo en el mercado argentino.",
+        "about": {"@type": "Organization", "name": "ByBit"}
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Caso Argentina Fintech Forum — PR para el evento de referencia del ecosistema fintech",
+        "description": "Comunicación y relaciones públicas para el evento de referencia del ecosistema fintech argentino.",
+        "about": {"@type": "Organization", "name": "Argentina Fintech Forum"}
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Caso Draper Cygnus — Comunicación para VC en LATAM",
+        "description": "Posicionamiento y comunicación para uno de los fondos de venture capital más relevantes de la región.",
+        "about": {"@type": "Organization", "name": "Draper Cygnus"}
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Caso ARGY — Podcast y streaming para ecosistema tech",
+        "description": "Producción y distribución de contenido en formato podcast y streaming para audiencias del ecosistema tech.",
+        "about": {"@type": "Organization", "name": "ARGY"}
+      }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "url": "https://www.ontherocks.com.ar/#contact",
+      "availableLanguage": ["Spanish", "English"],
+      "areaServed": "LATAM"
+    }
+  },
+  "keywords": [
+    "agencia comunicación tech Argentina",
+    "agencia PR startups LATAM",
+    "comunicación corporativa fintech Argentina",
+    "relaciones públicas empresas tecnológicas",
+    "agencia marketing crypto Argentina",
+    "PR exchanges criptomonedas LATAM",
+    "comunicación venture capital Argentina",
+    "agencia contenido podcast tech",
+    "paid media fintech Argentina",
+    "OTR On The Rocks agencia"
+  ]
+}

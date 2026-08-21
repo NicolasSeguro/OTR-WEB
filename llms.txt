@@ -1,0 +1,39 @@
+# OTR — On The Rocks
+
+> Agencia de comunicación integral para empresas de base tecnológica en Argentina y LATAM.
+
+OTR (On The Rocks) es la agencia de referencia en LATAM para empresas que están dando forma al futuro tecnológico. Ayudamos a compañías de base tecnológica —y a las instituciones y VCs que las impulsan— a ganar relevancia y credibilidad ante sus audiencias clave.
+
+## Quiénes somos
+
+OTR es una agencia de comunicación especializada en el ecosistema tecnológico de Argentina y LATAM. Trabajamos con startups, fintechs, exchanges de criptomonedas, plataformas SaaS, fondos de venture capital e instituciones del ecosistema tech.
+
+## Qué hacemos
+
+- **Relaciones Públicas para empresas tech**: Estrategia y ejecución de PR para startups, fintechs y empresas de base tecnológica. Cobertura en medios de alta autoridad en Argentina y LATAM.
+- **Comunicación Corporativa**: Posicionamiento de marca y comunicación institucional para empresas tecnológicas ante medios, inversores y audiencias clave del ecosistema.
+- **Contenido & Streaming**: Producción y distribución de contenido en formato podcast y streaming para audiencias del ecosistema tech en Argentina y LATAM.
+- **Paid Media**: Campañas de paid media para empresas tecnológicas, exchanges de criptomonedas y fintechs en el mercado argentino y LATAM.
+
+## Clientes y casos de éxito
+
+- **ByBit**: Campaña de paid media para uno de los exchanges de criptomonedas más grandes del mundo en el mercado argentino.
+- **Argentina Fintech Forum**: Comunicación y relaciones públicas para el evento de referencia del ecosistema fintech argentino.
+- **Draper Cygnus**: Posicionamiento y comunicación para uno de los fondos de venture capital más relevantes de la región.
+- **ARGY**: Producción y distribución de contenido en formato podcast y streaming para audiencias del ecosistema tech.
+- **Molon**: Estrategia de comunicación y posicionamiento de marca.
+
+## Mercados
+
+Argentina (principal), LATAM (regional).
+
+## Contacto
+
+Sitio web: https://www.ontherocks.com.ar
+Contacto: https://www.ontherocks.com.ar/#contact
+
+## Documentación completa
+
+- Versión completa: https://www.ontherocks.com.ar/llms-full.txt
+- Página para agentes IA: https://www.ontherocks.com.ar/ai/
+- Datos estructurados: https://www.ontherocks.com.ar/ai-feed.jsonld

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — OTR On The Rocks</title>
+  <meta name="description" content="¿Tenés un proyecto en mente? Escribinos y te respondemos en menos de 48 hs. On The Rocks, comunicación integral para empresas de base tecnológica en LATAM." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.ontherocks.com.ar/contact.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
+</head>
+<body class="page-contact">
+
+  <nav class="navbar navbar-solid" id="navbar">
+    <div class="navbar-pill">
+      <a class="navbar-logo" href="index.html" aria-label="OTR inicio">
+        <span class="logo-text">OTR.</span>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html" class="is-active" aria-current="page">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="contact-page-inner">
+      <h1 class="contact-page-title">¿Tenés un proyecto en mente?</h1>
+
+      <!-- Nota: sin backend de formularios todavía — "Enviar" abre el cliente de mail con los datos completados (js/main.js). Cuando haya un endpoint real, reemplazar por un submit real. -->
+      <form class="contact-form" id="contact-form" novalidate>
+        <fieldset class="contact-reasons">
+          <legend class="sr-only">Motivo de contacto</legend>
+          <label class="contact-radio">
+            <input type="radio" name="reason" value="Nuevos negocios" checked>
+            <span class="contact-radio-dot" aria-hidden="true"></span>
+            Nuevos negocios
+          </label>
+          <label class="contact-radio">
+            <input type="radio" name="reason" value="Consultas de prensa">
+            <span class="contact-radio-dot" aria-hidden="true"></span>
+            Consultas de prensa
+          </label>
+          <label class="contact-radio">
+            <input type="radio" name="reason" value="Todo lo demás">
+            <span class="contact-radio-dot" aria-hidden="true"></span>
+            Todo lo demás
+          </label>
+        </fieldset>
+
+        <a href="#equipo" class="contact-jobs-link">¿Buscás oportunidades laborales?</a>
+
+        <p class="contact-form-hint">Dejanos tus datos para que podamos contactarte. Respondemos en menos de 48 hs.</p>
+
+        <div class="contact-form-fields">
+          <input type="text" name="name" id="cf-name" placeholder="Nombre y apellido" autocomplete="name" required>
+          <input type="email" name="email" id="cf-email" placeholder="Email" autocomplete="email" required>
+          <textarea name="message" id="cf-message" placeholder="Contanos sobre tu proyecto" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit">
+          Enviar
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M3 9L9 3M9 3H4.5M9 3V7.5" stroke="#15141D" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+
+      <div class="contact-recruit" id="equipo">
+        <h2 class="contact-recruit-title">¿Te gustaría formar parte de nuestro equipo?</h2>
+        <p class="contact-recruit-text">Completá <a href="mailto:hola@ontherocks.com.ar?subject=Postulaci%C3%B3n%20laboral">el formulario</a> para que podamos contactarte ante futuras búsquedas.</p>
+        <p class="contact-location">Buenos Aires, Argentina</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Figma: página Contact (nodo 150:2) — mismo footer de legal+social+wordmark, sin el bloque CONTACT US/Get in touch (ya estamos en la página de contacto) -->
+  <section class="section-contact section-contact--page" id="contact-footer">
+    <div class="contact-inner">
+      <div class="contact-right">
+        <div class="contact-legal">
+          <a href="#">Cookie Policy</a>
+          <a href="#">Privacy Notice</a>
+        </div>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/company/on-the-rocks-comms" target="_blank" rel="noopener noreferrer">Linkedin</a>
+          <a href="https://twitter.com/ontherocks" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://www.instagram.com/ontherocks_comms/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@ontherocks" target="_blank" rel="noopener noreferrer">Youtube</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-logotype">
+      <img src="images/logotipo-blanco.png" alt="On The Rocks" width="1280" height="124">
+    </div>
+  </section>
+
+  <script src="js/main.js?v=12"></script>
+</body>
+</html>

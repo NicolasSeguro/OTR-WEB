@@ -1,0 +1,2618 @@
+/* =============================================
+   OTR — On The Rocks
+   CSS fiel al diseño Figma
+   Fuente: Clash Grotesk (local)
+   Paleta: #15141D (bg dark), #F5F3EF (bg light), #0143D8 (azul), #0148E9 (azul links)
+   ============================================= */
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('../fonts/clash-grotesk-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('../fonts/clash-grotesk-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('../fonts/clash-grotesk-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('../fonts/clash-grotesk-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- RESET & BASE ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Clash Grotesk', 'Inter', sans-serif;
+  background: #F5F3EF;
+  color: #15141D;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- NAVBAR ---- */
+/* Figma: Rectangle 28 — width:1056px, height:61px, left:106px, top:33px, bg:#15141D, border-radius:41.5px */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding-top: 33px;
+  pointer-events: none;
+}
+
+.navbar-pill {
+  width: 1056px;
+  height: 61px;
+  background: #15141D;
+  border-radius: 41.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px 0 34px;
+  pointer-events: all;
+  animation: navDrop 0.7s ease-out both;
+}
+
+@keyframes navDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Figma: "Reducción Blanco 1" — left:140px, top:50px, width:60px, height:24px */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+/* Figma: "SERVICE ABOUT PORTFOLIO BLOG CONTACT" — width:510px, height:15px, left:611px, top:56px, font-size:18px, color:#FFFFFF */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-links li a {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+.navbar-links li a:hover {
+  opacity: 0.7;
+}
+
+/* ---- HERO SECTION ---- */
+/* Figma: Rectangle 1 — width:1280px, height:693px, left:0, top:0, background:url(image.png) */
+/* Figma: Rectangle 39 — gradient overlay — width:1280px, height:337px, top:356px, linear-gradient(180deg, rgba(21,20,29,0) 0%, #15141D 100%) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 693px;
+  background-image: url('../images/hero-bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 337px;
+  background: linear-gradient(180deg, rgba(21, 20, 29, 0) 0%, #15141D 100%);
+  pointer-events: none;
+}
+
+/* Figma: "Comunicación integral..." — width:1007px, height:116px, left:60px, top:492px, font-size:50px, line-height:55px, color:#FFFFFF */
+.hero-content {
+  position: absolute;
+  left: 60px;
+  top: 492px;
+  width: 1007px;
+}
+
+.hero-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  color: #FFFFFF;
+  animation: heroFadeUp 0.9s ease-out both;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- 001 OUR WORK ---- */
+/* Figma: Rectangle 2 — width:1280px, height:693px, left:0, top:693px, bg:#15141D */
+/* Total section height: 693px (top:693px → bottom:1386px) */
+/* 001 OUR WORK label: top:748px → offset from section top = 55px */
+/* Heading line 1: top:866px → offset = 173px */
+/* Heading line 2: top:970px → offset = 277px */
+/* Body copy: top:1192px → offset = 499px */
+.section-work {
+  background: #15141D;
+  width: 100%;
+  height: 693px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-inner {
+  position: relative;
+  width: 1280px;
+  height: 693px;
+  margin: 0 auto;
+}
+
+/* Figma: "001 OUR WORK" — left:80px, top:748px (page) = top:55px (section), font-size:20px, line-height:55px, color:#666666 */
+.section-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #666666;
+  display: block;
+  position: absolute;
+  left: 80px;
+  top: 55px;
+  width: 1124px;
+  letter-spacing: 0.05em;
+}
+
+.section-label-white {
+  color: #FFFFFF;
+}
+
+.section-label-gray {
+  color: #666666;
+}
+
+/* Figma: "Somos la agencia de referencia..." — left:72px, top:866px (page) = top:173px (section) */
+/* width:1124px, height:110px, font-size:60px, line-height:55px, text-align:right */
+.work-heading-line1 {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 55px;
+  color: #FFFFFF;
+  text-align: right;
+  position: absolute;
+  left: 72px;
+  top: 173px;
+  width: 1124px;
+  height: 110px;
+}
+
+/* Figma line 2: "para las empresas que están" — right-aligned, continues from line 1 */
+.work-heading-line2 {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 55px;
+  color: #FFFFFF;
+  text-align: right;
+  position: absolute;
+  left: 72px;
+  top: 228px;
+  width: 1124px;
+  height: 55px;
+}
+
+/* Figma: "están dando forma al futuro." — left:80px, top:970px (page) = top:277px (section) */
+/* width:1124px, height:55px, font-size:60px, line-height:55px, text-align:left */
+.work-heading-line3 {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 55px;
+  color: #FFFFFF;
+  text-align: left;
+  position: absolute;
+  left: 80px;
+  top: 277px;
+  width: 1124px;
+  height: 55px;
+}
+
+/* Figma: "Ayudamos a compañías..." — left:80px, top:1192px (page) = top:499px (section) */
+/* width:1124px, height:60px, font-size:20px, line-height:30px */
+.work-body {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 80px;
+  top: 499px;
+  width: 1124px;
+  height: 60px;
+}
+
+/* ---- 002 PORTFOLIO ---- */
+/* Figma: section starts at page top 1386px */
+.section-portfolio {
+  background: #15141D;
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+/* Figma: "002 PORTFOLIO" overlays the top of the cards — left:59px, top:27px into section */
+.portfolio-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #FFFFFF;
+  display: block;
+  position: absolute;
+  left: 59px;
+  top: 27px;
+  z-index: 5;
+  letter-spacing: 0.05em;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* ---- TOP ROW: 3 cards each 428×452px ---- */
+.portfolio-top-row {
+  display: flex;
+  width: 100%;
+  height: 452px;
+}
+
+/* ---- BOTTOM ROW: 2 cards, total height 227px ---- */
+.portfolio-bottom-row {
+  display: flex;
+  width: 100%;
+  height: 227px;
+}
+
+/* ---- SHARED PCARD BASE ---- */
+.pcard {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* TOP ROW widths: 3 equal columns from 1280px = ~426.67px each */
+.pcard-1 { width: calc(1280px / 3); }
+.pcard-2 { width: calc(1280px / 3); }
+.pcard-3 { width: calc(1280px / 3); }
+
+/* BOTTOM ROW widths: card4 = 427px, card5 = 853px */
+.pcard-4 { width: 427px; }
+.pcard-5 { flex: 1; }
+
+/* ---- CARD BACKGROUND ---- */
+.pcard-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* Card 2 (Draper): Figma opacity:0.8, rotate:-180deg */
+.pcard-2 .pcard-bg {
+  opacity: 0.8;
+  transform: rotate(180deg);
+}
+.pcard-2:hover .pcard-bg {
+  opacity: 0.9;
+  transform: rotate(180deg) scale(1.04);
+}
+
+/* Card 4 (ARGY): Figma rotate:90deg */
+.pcard-4 .pcard-bg {
+  transform: rotate(90deg) scale(1.8);
+  transform-origin: center center;
+}
+.pcard-4:hover .pcard-bg {
+  transform: rotate(90deg) scale(1.9);
+}
+
+/* Card 5 (ByBit): Figma matrix(1,0,0,-1,0,0) = flip vertical */
+.pcard-5 .pcard-bg {
+  transform: scaleY(-1);
+  background-size: cover;
+  background-position: center;
+}
+.pcard-5:hover .pcard-bg {
+  transform: scaleY(-1) scale(1.04);
+}
+
+/* Default hover for cards 1, 3 */
+.pcard-1:hover .pcard-bg,
+.pcard-3:hover .pcard-bg {
+  transform: scale(1.04);
+}
+
+/* ---- CARD CONTENT ---- */
+/* Figma: content positioned at bottom-left of each card */
+/* icon at ~138px from card top, title at ~207px, service at ~284px, num at ~397px */
+.pcard-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Gradient overlay over content area */
+  background: linear-gradient(180deg, rgba(0,14,31,0) 0%, rgba(0,14,31,0.75) 100%);
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+/* ---- ICON ---- */
+/* Figma: icon at left:59px (card-relative), top:138px from card top */
+.pcard-icon {
+  position: absolute;
+  left: 59px;
+  top: 138px;
+  width: 52px;
+  height: 50px;
+  z-index: 2;
+}
+
+.pcard-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Icons are white-on-black exports — screen blend removes black */
+  mix-blend-mode: screen;
+}
+
+.pcard-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- TITLE ---- */
+/* Figma: left:59px (card-relative), top:207px, font-size:50px, line-height:45px */
+.pcard-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 45px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 59px;
+  top: 207px;
+  width: calc(100% - 80px);
+}
+
+/* Figma Melian title at card-rel top:231px */
+.pcard-title-melian {
+  top: 231px;
+}
+
+/* Bottom row cards — Figma ARGY top:39px, ByBit top:36px */
+.pcard-4 .pcard-title {
+  top: 39px;
+  font-size: 50px;
+  line-height: 45px;
+}
+
+.pcard-5 .pcard-title {
+  top: 36px;
+  font-size: 50px;
+  line-height: 45px;
+}
+
+/* ---- SERVICE LABEL ---- */
+/* Figma: left:59px, top:284px (top-row cards), font-size:20px, line-height:45px */
+.pcard-service {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 45px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 59px;
+  top: 284px;
+  width: calc(100% - 80px);
+}
+
+.pcard-4 .pcard-service,
+.pcard-5 .pcard-service {
+  top: 107px;
+}
+
+/* ---- NUMBER ---- */
+/* Figma: left:59px, top:397px (top-row), font-size:20px, line-height:55px */
+.pcard-num {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 59px;
+  top: 397px;
+}
+
+.pcard-4 .pcard-num,
+.pcard-5 .pcard-num {
+  top: 162px;
+}
+
+/* ---- BLUE BAR ---- */
+/* Figma: Rectangle 8 — width:1280px, height:131px, left:0, top:2291px, bg:#0143D8 */
+/* Figma: "Ver más" — width:1124px, height:55px, left:96px, top:2333px, font-size:40px, line-height:55px, text-align:right, color:#FFFFFF */
+.blue-bar {
+  background: #0143D8;
+  width: 100%;
+  height: 131px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 96px;
+}
+
+.blue-bar-link {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 55px;
+  color: #FFFFFF;
+  text-align: right;
+  transition: opacity 0.2s;
+}
+
+.blue-bar-link:hover {
+  opacity: 0.8;
+}
+
+/* ---- 003 SERVICE ---- */
+/* Figma: Rectangle 17 — width:1280px, height:754px, top:2422px, bg:#15141D */
+.section-service {
+  background: #15141D;
+  width: 100%;
+  /* height:754px from Figma; use min-height to allow content to breathe */
+  min-height: 754px;
+  overflow: hidden;
+}
+
+.service-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+/* Figma: "003 SERVICE" — left:80px, top:2508px (section offset:86px), 20px, #666666 */
+.service-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #666666;
+  display: block;
+  padding-top: 86px;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+
+/* Figma: "Creamos y ejecutamos..." — left:398px, top:2592px (offset:170px) */
+/* width:818px, height:60px, font-size:20px, line-height:30px, text-align:right, color:#FFFFFF */
+/* Offset from label bottom: 170-86-55 = 29px. Use margin-top to position. */
+.service-desc {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-align: right;
+  width: 818px;
+  margin-left: auto;
+  margin-top: 29px;
+  margin-bottom: 0;
+}
+
+/* Figma: 4 photo cards — lefts 80 / 388 / 690 / 970 → gaps 60 / 54 / 33 */
+.service-cards {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  margin-top: 68px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.scard:nth-child(1) { margin-right: 60px; }
+.scard:nth-child(2) { margin-right: 54px; }
+.scard:nth-child(3) { margin-right: 33px; }
+
+/* ---- SCARD (service photo card) ---- */
+.scard {
+  position: relative;
+  width: 248px;
+  height: 346px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+a.scard {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.scard:nth-child(3) {
+  width: 247px;
+}
+
+/* Photo background */
+.scard-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+/* Opacity variants per Figma */
+.scard-photo-op80 { opacity: 0.8; }
+.scard-photo-op60 { opacity: 0.6; }
+.scard-photo-op50 { opacity: 0.5; }
+
+.scard:hover .scard-photo {
+  transform: scale(1.04);
+}
+
+/* Dark gradient overlay for text readability */
+.scard-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Figma: "x" icon — card-relative left:21px, top:146px, font-size:30px, line-height:25px */
+.scard-x {
+  position: absolute;
+  left: 21px;
+  top: 146px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 25px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+/* Figma: title — card-relative left:20px, top:206px, font-size:25px, line-height:25px */
+.scard-title {
+  position: absolute;
+  left: 20px;
+  top: 206px;
+  width: calc(100% - 32px);
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+/* Card 2: title at top:219px (Figma: top:2939px → card-rel:219px) */
+.scard-title-2 {
+  top: 219px;
+}
+
+/* Card 4: title at top:231px (Figma: top:2951px → card-rel:231px) */
+.scard-title-4 {
+  top: 231px;
+}
+
+/* ---- 004 TRUSTED BY ---- */
+/* Figma: Rectangle 26 — width:1280px, height:883px, top:3176px, bg:#19191D */
+.section-trusted {
+  background: #19191D;
+  width: 100%;
+  min-height: 883px;
+}
+
+.trusted-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* No horizontal padding — grid borders go edge-to-edge inside the 1120px content area */
+  padding: 0;
+}
+
+/* Figma: "004 TRUSTED BY" — left:80px, top:3266px (section offset:90px), 20px, #666666 */
+.trusted-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #666666;
+  display: block;
+  padding-top: 90px;
+  padding-left: 80px;
+  padding-bottom: 0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+
+/* Figma: logos grid — 4 cols × 5 rows, each cell ~256×120px, no dividers — logos float on continuous bg */
+/* Section width 1280px / 4 cols = 320px per col */
+/* Row height: (883 - 90 - 55) / 5 = ~147px per row */
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 rows of logos + 1 bottom row */
+  grid-template-rows: repeat(4, 147px) 100px;
+  gap: 0;
+  margin-top: 20px;
+}
+
+/* Each logo cell — centered, no borders */
+.logo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+}
+
+.logo-cell img {
+  max-width: 140px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* Logos are already white from Figma — no filter needed */
+  opacity: 0.85;
+}
+
+/* Text-only logo cells */
+.logo-cell-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.04em;
+}
+
+/* Bottom row: spans full width, logos centered horizontally */
+.logo-cell-bottom {
+  /* stays in 4-col grid, just shorter height */
+}
+
+.logo-cell-bottom img {
+  max-width: 130px;
+  max-height: 40px;
+  opacity: 0.85;
+}
+
+/* ---- 005 FAQs ---- */
+/* Figma: Rectangle 29 — width:1288px, height:634px, top:4059px, bg:#D9D9D9 */
+.section-faq {
+  background: #D9D9D9;
+  width: 100%;
+  min-height: 634px;
+}
+
+.faq-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* Figma: label at left:60px, items at left:100px */
+  padding: 0;
+}
+
+/* Figma: "005 FAQs" — left:60px, top:4124px (section offset:65px), 20px, #666666 */
+.faq-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #666666;
+  display: block;
+  padding-top: 65px;
+  padding-left: 60px;
+  margin-bottom: 0;
+  letter-spacing: 0.05em;
+}
+
+/* Figma: FAQ list — first item at top:4256px (section offset:197px) */
+/* Offset from label bottom: 197-65-55 = 77px */
+/* Gap between items: 4320-4256=64px; item height:41px; so gap between items = 64-41 = 23px */
+.faq-list {
+  margin-top: 77px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  padding-left: 100px;
+  padding-bottom: 80px;
+}
+
+/* Figma: Rectangle 30-34 — width:640px, height:41px, border:0.5px solid #15141D, border-radius:27px */
+.faq-item {
+  display: grid;
+  grid-template-columns: 22px 1fr 12px;
+  align-items: center;
+  column-gap: 9px;
+  width: 640px;
+  min-height: 41px;
+  height: auto;
+  border: 0.5px solid #15141D;
+  border-radius: 27px;
+  padding: 0 20px 0 30px;
+  cursor: pointer;
+  transition: background 0.2s, border-radius 0.2s;
+}
+
+.faq-item:hover {
+  background: rgba(21, 20, 29, 0.06);
+}
+
+.faq-item.faq-open {
+  border-radius: 20px;
+  padding-top: 8px;
+  padding-bottom: 14px;
+  align-items: start;
+}
+
+/* Figma: number — left:130px (item-relative:30px), width:22px, font-size:20px, color:#15141D */
+.faq-num {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 41px;
+  color: #15141D;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+/* Figma: question — left:161px (item-relative:61px), font-size:20px, line-height:55px, color:#15141D */
+.faq-q {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 41px;
+  color: #15141D;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.faq-a {
+  grid-column: 1 / -1;
+  display: none;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #15141D;
+  opacity: 0.8;
+  padding: 4px 32px 0 0;
+}
+
+.faq-item.faq-open .faq-a {
+  display: block;
+}
+
+/* Figma: Vector 11-15 — left:687px (item-relative:587px), 12×12px, border:1px solid #0148E9, rotate:90deg */
+.faq-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  margin-top: 14px;
+  transform: rotate(90deg);
+  transition: transform 0.25s ease;
+}
+
+.faq-item.faq-open .faq-arrow {
+  transform: rotate(-90deg);
+}
+
+.faq-item:not(.faq-open) .faq-arrow {
+  margin-top: 0;
+}
+
+/* ---- CONTACT US ---- */
+/* Figma: Rectangle 22 — width:1282px, height:693px, left:-2px, top:4693px, bg:#15141D */
+.section-contact {
+  background: #15141D;
+  width: 100%;
+  min-height: 693px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Figma: contact-inner holds the 3 columns at top of section */
+/* Left col at left:122px, legal col at left:684px, social col at left:1018px */
+/* All columns start at top:4768px (section offset: 75px) */
+.contact-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 75px 122px 0 122px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  /* CONTACT US label at offset 75px, button at offset 134px: gap = 134-75-55 = 4px */
+  gap: 4px;
+}
+
+/* Figma: "CONTACT US" — left:122px, top:4768px (section offset:75px), 20px, line-height:55px, white */
+.contact-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* Figma: Rectangle 25 — width:167px, height:33px, left:122px, top:4827px, bg:#15141D, border:0.5px solid white, border-radius:27px */
+/* Figma: "Get in touch" — left:138px (padding-left:16px), top:4816px, 20px, white */
+/* Figma: Vector 10 — left:257px (right side of button), 12×12px, circle+arrow, white */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 167px;
+  height: 33px;
+  background: #15141D;
+  border: 0.5px solid #FFFFFF;
+  border-radius: 27px;
+  padding: 0 12px 0 16px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+  gap: 8px;
+}
+
+.contact-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #FFFFFF;
+}
+
+/* RIGHT side: legal + social columns */
+/* Figma: legal at left:684px (section-relative), social at left:1018px */
+/* Gap between them: 1018-684-205 = 129px */
+.contact-right {
+  display: flex;
+  gap: 129px;
+  /* Align to top of section at same offset as label (75px already from padding) */
+}
+
+/* Figma: "Cookie Policy / Privacy Notice" — left:684px, top:4775px (offset:82px), width:205px, height:60px, 20px, line-height:30px, white */
+.contact-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* offset from section top: 82px; inner padding already 75px, so extra 7px */
+  margin-top: 7px;
+}
+
+.contact-legal a {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.contact-legal a:hover { opacity: 1; }
+
+/* Figma: "Linkedin Twitter Instagram Youtube" — left:1018px, top:4775px (offset:82px), width:205px, height:120px, 20px, line-height:30px, white */
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 7px;
+}
+
+.contact-social a {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.contact-social a:hover { opacity: 1; }
+
+/* Figma: Logotipo Blanco — left:0, top:5262px (section offset:569px), width:1280px, height:124px */
+/* This is the large wordmark image at the bottom of the contact section */
+.contact-logotype {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 124px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.contact-logotype img {
+  width: 100%;
+  height: 124px;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-pill,
+  .hero-text,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ---- SERVICE PAGE (Figma node 2:794) ---- */
+.page-service {
+  background: #FFFFFF;
+}
+
+.navbar-solid {
+  position: relative;
+  background: #15141D;
+  padding: 24px 0 28px;
+  pointer-events: none;
+}
+
+.navbar-solid .navbar-pill {
+  margin: 0 auto;
+  animation: none;
+}
+
+.navbar-links a.is-active {
+  color: #5BE0D8;
+  opacity: 1;
+}
+
+.svc-block {
+  width: 100%;
+}
+
+.svc-block--white {
+  background: #FFFFFF;
+}
+
+.svc-block--gray {
+  background: #D9D9D9;
+}
+
+.svc-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 80px 110px;
+}
+
+.svc-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #15141D;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.svc-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+  margin-left: 28%;
+}
+
+.svc-list {
+  list-style: none;
+  width: 100%;
+  margin: 0 0 36px;
+  padding: 0;
+}
+
+.svc-list li {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #15141D;
+  padding: 18px 0;
+  border-bottom: 0.5px solid rgba(21, 20, 29, 0.28);
+}
+
+.svc-list li:first-child {
+  padding-top: 0;
+}
+
+.svc-list li:last-child {
+  border-bottom: none;
+}
+
+.svc-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 200px;
+  height: 36px;
+  padding: 0 14px 0 18px;
+  background: #15141D;
+  color: #FFFFFF;
+  border-radius: 27px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.svc-cta:hover {
+  background: #0143D8;
+  color: #FFFFFF;
+}
+
+.svc-cta svg {
+  flex-shrink: 0;
+}
+
+.page-service .section-contact {
+  margin-top: 0;
+}
+
+/* ---- ABOUT PAGE (Figma node 1:248) ---- */
+.page-about {
+  background: #F5F5F0;
+}
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  overflow: hidden;
+  background: #15141D;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.7;
+}
+
+.about-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(21,20,29,0.2) 0%, rgba(21,20,29,0.55) 45%, rgba(21,20,29,0.92) 100%);
+}
+
+.about-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 72px;
+}
+
+.about-hero-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.05;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.about-hero-title span {
+  font-weight: 600;
+}
+
+.about-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.about-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: #888888;
+  margin: 0 0 28px;
+}
+
+.about-label--blue {
+  color: #0148E9;
+}
+
+.about-intro {
+  background: #F5F5F0;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.about-intro-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #15141D;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-intro-text strong {
+  font-weight: 600;
+}
+
+.about-vision {
+  background: #15141D;
+  padding: 90px 0 100px;
+}
+
+.about-vision-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.35;
+  color: #FFFFFF;
+  max-width: 980px;
+  margin: 0;
+}
+
+.about-accent {
+  color: #0148E9;
+}
+
+.about-values {
+  background: #F5F5F0;
+  padding: 100px 0;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px 100px;
+}
+
+.about-value-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  color: #15141D;
+  margin: 0 0 16px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.about-value-body {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #444444;
+  margin: 0;
+  max-width: 480px;
+}
+
+.about-value--2 {
+  grid-column: 1;
+}
+
+.about-value--3 {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  text-align: right;
+}
+
+.about-value--3 .about-value-body {
+  margin-left: auto;
+}
+
+.about-mission {
+  background: #15141D;
+  padding: 90px 0 110px;
+}
+
+.about-mission-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin: 0 0 64px;
+  max-width: 980px;
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+}
+
+.about-pillar-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin: 0 0 14px;
+}
+
+.about-pillar-body {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
+.about-media {
+  background: #F5F5F0;
+  padding: 72px 0 40px;
+}
+
+.about-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.about-media-card {
+  position: relative;
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+  aspect-ratio: 16 / 10;
+  background: #15141D;
+}
+
+.about-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.about-media-card:hover .about-media-img {
+  transform: scale(1.03);
+}
+
+.about-media-avatar {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  background: url('../images/about/reality-avatar.png') center / cover no-repeat;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+.about-media-time {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+  color: #FFFFFF;
+  background: rgba(0,0,0,0.72);
+  border-radius: 6px;
+  padding: 5px 9px;
+  letter-spacing: 0.02em;
+}
+
+.about-team {
+  background: #F5F5F0;
+  padding: 70px 0 110px;
+}
+
+.about-team-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.15;
+  color: #15141D;
+  margin: 0 0 48px;
+}
+
+.about-founder {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+  margin-bottom: 64px;
+}
+
+.about-founder-photo {
+  width: 200px;
+  height: 240px;
+  border-radius: 12px;
+  background: #D8D8D8 center / cover no-repeat;
+  flex-shrink: 0;
+}
+
+.about-founder-name {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0 0 6px;
+  color: #15141D;
+}
+
+.about-founder-role {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  color: #666666;
+  margin: 0 0 16px;
+}
+
+.about-role-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-role-pills span {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+  color: #FFFFFF;
+  background: #15141D;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px 24px;
+}
+
+.about-member {
+  text-align: left;
+}
+
+.about-member-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  background: #D8D8D8 center / cover no-repeat;
+  margin: 0 0 14px;
+}
+
+.about-member-photo--pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-member-photo--pending span {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #9A9A9A;
+}
+
+.about-member-name {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: #15141D;
+}
+
+.about-member-role {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+}
+
+/* ---- PORTFOLIO PAGE (Figma node 1:313) ---- */
+.page-portfolio {
+  background: #F0F0F0;
+}
+
+.portfolio-page {
+  padding: 48px 0 80px;
+}
+
+.portfolio-page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.portfolio-page-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: #666666;
+  margin: 0 0 20px;
+}
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.portfolio-filter {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: #15141D;
+  background: transparent;
+  border: 0.5px solid #15141D;
+  border-radius: 27px;
+  width: 210px;
+  min-height: 62px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.is-active {
+  background: #15141D;
+  color: #FFFFFF;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px 31px;
+}
+
+.pgrid-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 267 / 344;
+  border-radius: 4px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.pgrid-card.is-hidden {
+  display: none;
+}
+
+.pgrid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 35%, rgba(0,0,0,0.72) 100%);
+  transition: background 0.3s;
+}
+
+.pgrid-card:hover .pgrid-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.82) 100%);
+}
+
+.pgrid-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 20px 18px;
+}
+
+.pgrid-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.pgrid-cat {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.pgrid-extra {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- CONTACT PAGE (Figma node 150:2) ---- */
+.page-contact {
+  background: #15141D;
+}
+
+.contact-page {
+  padding: 160px 0 120px;
+}
+
+.contact-page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 122px;
+}
+
+.contact-page-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin: 0 0 48px;
+}
+
+.contact-form {
+  max-width: 620px;
+}
+
+.contact-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 0 36px;
+  padding: 0;
+  border: none;
+}
+
+.contact-radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 17px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.contact-radio input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.contact-radio-dot {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  position: relative;
+}
+
+.contact-radio input:checked + .contact-radio-dot::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+.contact-radio input:focus-visible + .contact-radio-dot {
+  outline: 2px solid #0148E9;
+  outline-offset: 2px;
+}
+
+.contact-jobs-link {
+  display: inline-block;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-decoration: underline;
+  opacity: 0.85;
+  margin-bottom: 36px;
+}
+
+.contact-jobs-link:hover { opacity: 1; }
+
+.contact-form-hint {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 20px;
+}
+
+.contact-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.contact-form-fields input,
+.contact-form-fields textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.4);
+  color: #FFFFFF;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  padding: 10px 2px;
+  resize: none;
+}
+
+.contact-form-fields input::placeholder,
+.contact-form-fields textarea::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.contact-form-fields input:focus,
+.contact-form-fields textarea:focus {
+  outline: none;
+  border-bottom-color: #0148E9;
+}
+
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 20px;
+  background: #FFFFFF;
+  color: #15141D;
+  border: none;
+  border-radius: 27px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-submit:hover {
+  background: #0148E9;
+  color: #FFFFFF;
+}
+
+.contact-submit:hover svg path {
+  stroke: #FFFFFF;
+}
+
+.contact-recruit {
+  max-width: 620px;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 0.5px solid rgba(255,255,255,0.2);
+}
+
+.contact-recruit-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: #FFFFFF;
+  margin: 0 0 14px;
+}
+
+.contact-recruit-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 20px;
+}
+
+.contact-recruit-text a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.contact-location {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.section-contact--page .contact-inner {
+  padding-top: 0;
+  padding-bottom: 90px;
+}
+
+/* ---- BLOG PAGE (Figma node 136:163) ---- */
+.page-blog {
+  background: #F5F5F0;
+}
+
+.blog-page {
+  padding: 140px 0 100px;
+}
+
+.blog-page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.blog-page-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: #888888;
+  margin: 0 0 12px;
+}
+
+.blog-page-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1;
+  color: #15141D;
+  margin: 0 0 8px;
+}
+
+.blog-page-subtitle {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #15141D;
+  margin: 0 0 56px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 40px;
+}
+
+.blog-card {
+  aspect-ratio: 16 / 6;
+  border-radius: 8px;
+  background: #D9D9D9;
+}
+
+.blog-card--pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card--pending span {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9A9A9A;
+}
+
+/* ---- RESPONSIVE (tablet/mobile) ---- */
+@media (max-width: 1279px) {
+  /* Scale down the absolute-positioned Our Work section */
+  .section-work {
+    height: auto;
+    min-height: 693px;
+  }
+
+  .work-inner {
+    width: 100%;
+    height: auto;
+    min-height: 693px;
+  }
+
+  .section-label {
+    left: 6.25%;
+    width: 87.8%;
+  }
+
+  .work-heading-line1 {
+    left: 5.6%;
+    width: 87.8%;
+  }
+
+  .work-heading-line2 {
+    left: 5.6%;
+    width: 87.8%;
+  }
+
+  .work-heading-line3 {
+    left: 6.25%;
+    width: 87.8%;
+  }
+
+  .work-body {
+    left: 6.25%;
+    width: 87.8%;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 1101px) {
+  /* Scale portfolio cards proportionally */
+  .portfolio-top-row,
+  .portfolio-bottom-row {
+    width: 100%;
+  }
+
+  .pcard-1, .pcard-2, .pcard-3 {
+    width: calc(100% / 3);
+  }
+
+  .pcard-4 {
+    width: 33.4%;
+  }
+
+  .pcard-title {
+    font-size: 40px;
+    left: 40px;
+    top: 200px;
+  }
+
+  .pcard-service {
+    left: 40px;
+    top: 270px;
+  }
+
+  .pcard-num {
+    left: 40px;
+    top: 380px;
+  }
+
+  .pcard-icon {
+    left: 40px;
+    top: 130px;
+  }
+
+  .pcard-4 .pcard-title,
+  .pcard-5 .pcard-title {
+    font-size: 40px;
+    left: 30px;
+    top: 30px;
+  }
+
+  .pcard-4 .pcard-service,
+  .pcard-5 .pcard-service {
+    left: 30px;
+    top: 90px;
+  }
+
+  .pcard-4 .pcard-num,
+  .pcard-5 .pcard-num {
+    left: 30px;
+    top: 145px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar-pill {
+    width: calc(100% - 40px);
+    padding: 0 24px;
+  }
+
+  .hero-content {
+    left: 40px;
+    width: calc(100% - 80px);
+  }
+
+  .service-inner,
+  .trusted-inner,
+  .faq-inner,
+  .contact-inner {
+    padding: 0 40px;
+  }
+
+  .contact-page-inner,
+  .blog-page-inner {
+    padding: 0 40px;
+  }
+
+  .contact-page-title {
+    font-size: 34px;
+  }
+
+  .blog-page-title {
+    font-size: 48px;
+  }
+
+  .svc-inner {
+    padding: 72px 40px 80px;
+  }
+
+  .svc-content {
+    margin-top: 32px;
+  }
+
+  .svc-title {
+    font-size: 40px;
+  }
+
+  .about-hero {
+    height: 480px;
+  }
+
+  .about-hero-inner,
+  .about-inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .about-hero-title {
+    font-size: 48px;
+  }
+
+  .about-vision-text,
+  .about-intro-text {
+    font-size: 28px;
+  }
+
+  .about-mission-title {
+    font-size: 32px;
+  }
+
+  .about-pillars,
+  .about-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-value--3 {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .about-value--3 .about-value-body {
+    margin-left: 0;
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio-page-inner {
+    padding: 0 24px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pgrid-title {
+    font-size: 18px;
+  }
+
+  /* Portfolio: scale cards to viewport */
+  .pcard-1, .pcard-2, .pcard-3 {
+    width: calc(100% / 3);
+  }
+
+  .pcard-4 {
+    width: 33.4%;
+  }
+
+  .pcard-title {
+    font-size: 32px;
+    left: 30px;
+    top: 180px;
+  }
+
+  .pcard-service {
+    font-size: 16px;
+    left: 30px;
+    top: 250px;
+  }
+
+  .pcard-num {
+    left: 30px;
+    top: 360px;
+  }
+
+  .pcard-icon {
+    left: 30px;
+    top: 120px;
+  }
+
+  .pcard-4 .pcard-title,
+  .pcard-5 .pcard-title {
+    font-size: 32px;
+    left: 24px;
+    top: 24px;
+  }
+
+  .pcard-4 .pcard-service,
+  .pcard-5 .pcard-service {
+    font-size: 16px;
+    left: 24px;
+    top: 80px;
+  }
+
+  .pcard-4 .pcard-num,
+  .pcard-5 .pcard-num {
+    left: 24px;
+    top: 130px;
+  }
+
+  /* Service cards: 2×2 grid on tablet */
+  .service-cards {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .scard,
+  .scard:nth-child(3) {
+    width: calc(50% - 10px);
+    margin-right: 0;
+  }
+
+  .service-desc {
+    width: 100%;
+  }
+
+  /* Trusted by: keep 4 cols on tablet, just reduce cell height */
+  .logos-grid {
+    grid-template-rows: repeat(4, 120px) 80px;
+  }
+
+  .logo-cell img {
+    max-width: 110px;
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Our Work section mobile */
+  .section-work {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 60px;
+  }
+
+  .work-inner {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0 24px;
+  }
+
+  .section-label {
+    position: static;
+    display: block;
+    padding-top: 40px;
+    width: auto;
+    left: auto;
+    top: auto;
+    font-size: 16px;
+  }
+
+  .work-heading-line1,
+  .work-heading-line2,
+  .work-heading-line3 {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 24px;
+    text-align: left;
+  }
+
+  .work-body {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .navbar {
+    padding-top: 16px;
+  }
+
+  .navbar-solid {
+    padding: 16px 0 20px;
+  }
+
+  .navbar-pill {
+    width: calc(100% - 32px);
+    height: 52px;
+    padding: 0 20px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .svc-inner {
+    padding: 56px 24px 64px;
+  }
+
+  .svc-content {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+
+  .svc-title {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .svc-list li {
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  .about-hero {
+    height: 420px;
+  }
+
+  .about-hero-inner,
+  .about-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .about-hero-title {
+    font-size: 36px;
+  }
+
+  .about-vision-text,
+  .about-intro-text,
+  .about-team-title {
+    font-size: 26px;
+  }
+
+  .about-mission-title {
+    font-size: 26px;
+  }
+
+  .about-value-title {
+    font-size: 22px;
+  }
+
+  .about-founder {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-founder-photo {
+    width: 160px;
+    height: 192px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 14px;
+  }
+
+  .about-member-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-media-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .portfolio-filters {
+    gap: 8px;
+  }
+
+  .portfolio-filter {
+    width: auto;
+    min-height: auto;
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .pgrid-card {
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero {
+    height: 500px;
+  }
+
+  .hero-text {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .hero-content {
+    left: 24px;
+    top: 340px;
+    width: calc(100% - 48px);
+  }
+
+  .work-heading-line1,
+  .work-heading-line2,
+  .work-heading-line3 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  /* Portfolio mobile: stack all cards vertically */
+  .portfolio-label {
+    position: static;
+    padding: 24px 24px 0;
+    pointer-events: auto;
+  }
+
+  .portfolio-top-row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .portfolio-bottom-row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .pcard-1, .pcard-2, .pcard-3 {
+    width: 100%;
+    height: 280px;
+  }
+
+  .pcard-4, .pcard-5 {
+    width: 100%;
+    height: 200px;
+  }
+
+  .pcard-title {
+    font-size: 28px;
+    left: 24px;
+    top: 120px;
+  }
+
+  .pcard-service {
+    font-size: 14px;
+    left: 24px;
+    top: 170px;
+  }
+
+  .pcard-num {
+    left: 24px;
+    top: 220px;
+  }
+
+  .pcard-icon {
+    left: 24px;
+    top: 60px;
+  }
+
+  .pcard-4 .pcard-title,
+  .pcard-5 .pcard-title {
+    font-size: 28px;
+    left: 24px;
+    top: 24px;
+  }
+
+  .pcard-4 .pcard-service,
+  .pcard-5 .pcard-service {
+    font-size: 14px;
+    left: 24px;
+    top: 70px;
+  }
+
+  .pcard-4 .pcard-num,
+  .pcard-5 .pcard-num {
+    left: 24px;
+    top: 110px;
+  }
+
+  .blue-bar {
+    padding-right: 24px;
+    justify-content: flex-end;
+  }
+
+  .blue-bar-link {
+    font-size: 28px;
+  }
+
+  /* Service cards mobile: 2 columns */
+  .service-cards {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .scard,
+  .scard:nth-child(3) {
+    width: calc(50% - 6px);
+    height: 260px;
+    margin-right: 0;
+  }
+
+  .scard-x {
+    top: 100px;
+    font-size: 24px;
+  }
+
+  .scard-title,
+  .scard-title-2,
+  .scard-title-4 {
+    top: 150px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .service-desc {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Trusted by mobile: 2 cols, auto row height */
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+  }
+
+  .logo-cell {
+    min-height: 90px;
+    padding: 16px 12px;
+  }
+
+  .logo-cell img {
+    max-width: 90px;
+    max-height: 40px;
+  }
+
+  .logo-cell-text {
+    font-size: 14px;
+  }
+
+  .trusted-label {
+    padding-left: 24px;
+    padding-top: 50px;
+  }
+
+  /* FAQ mobile overrides */
+  .faq-label {
+    padding-left: 24px;
+    padding-top: 40px;
+    font-size: 16px;
+  }
+
+  .faq-list {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 40px;
+  }
+
+  .faq-item {
+    width: 100%;
+    height: auto;
+    min-height: 41px;
+    padding: 8px 16px;
+  }
+
+  .faq-q {
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .faq-num {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Contact mobile overrides */
+  .section-contact {
+    min-height: auto;
+    padding-bottom: 140px; /* space for logotype image */
+  }
+
+  .contact-inner {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 24px 0 24px;
+  }
+
+  .contact-right {
+    gap: 40px;
+  }
+
+  .contact-btn {
+    font-size: 16px;
+    width: auto;
+    padding: 0 16px;
+  }
+
+  .contact-logotype {
+    height: 60px;
+  }
+
+  .contact-logotype img {
+    height: 60px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .contact-page {
+    padding: 120px 0 80px;
+  }
+
+  .contact-page-inner,
+  .blog-page-inner {
+    padding: 0 24px;
+  }
+
+  .contact-page-title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .blog-page {
+    padding: 110px 0 60px;
+  }
+
+  .blog-page-title {
+    font-size: 40px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .blog-card {
+    aspect-ratio: 16 / 9;
+  }
+}

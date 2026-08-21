@@ -1,0 +1,55 @@
+SERVICE SECTION — FIGMA ANALYSIS
+===================================
+
+SECTION BOUNDS:
+- Rectangle 17: width:1280px, height:754px, left:0, top:2422px, bg:#15141D
+- Section offset: 2422px from page top
+
+LABEL "003 SERVICE":
+- page top: 2508px → section offset: 86px
+- left:80px, width:1124px, height:55px
+- font: 20px, line-height:55px, color:#666666
+
+BODY COPY (right-aligned):
+- "Creamos y ejecutamos estrategias de comunicación con visión de negocio, diseñadas para escalar en mercados complejos."
+- page top: 2592px → section offset: 170px
+- left:398px, width:818px, height:60px
+- font: 20px, line-height:30px, text-align:right, color:#FFFFFF
+
+PHOTO CARDS (4 cards, each 247-248×346px, border-radius:12px):
+- section offset for all cards: top:2720px → offset:298px
+
+Card 1 (Contenido digital y branding): left:80px, width:248px
+  - photo: service-photo3.png (Skycom satellite, B&W) — no opacity modifier
+  - x icon: left:101px, top:2866px → card-relative: left:21px, top:146px
+  - title: left:100px, top:2926px → card-relative: left:20px, top:206px
+    font:25px, line-height:25px, "Contenido digital y branding"
+
+Card 2 (Medios, PR y asuntos públicos): left:388px, width:248px
+  - photo: service-photo2.png (networking/event, blue tint) — opacity:0.8
+  - x icon: left:410px, top:2866px → card-relative: left:22px, top:146px
+  - title: left:410px, top:2939px → card-relative: left:22px, top:219px
+    font:25px, line-height:25px, "Medios, PR y asuntos públicos"
+
+Card 3 (Producción audiovisual y de eventos): left:690px, width:247px
+  - photo: service-photo1.png (panel discussion, colorful) — opacity:0.6
+  - x icon: left:712px, top:2866px → card-relative: left:22px, top:146px
+  - title: left:712px, top:2927px → card-relative: left:22px, top:207px
+    font:25px, line-height:25px, "Producción audiovisual y de eventos"
+
+Card 4 (Podcast & streaming): left:970px, width:248px
+  - photo: service-photo4.png (AFF event, blue) — opacity:0.5
+  - x icon: left:991px, top:2866px → card-relative: left:21px, top:146px
+  - title: left:991px, top:2951px → card-relative: left:21px, top:231px
+    font:25px, line-height:25px, "Podcast & streaming"
+
+X ICONS:
+- All x icons: width:190px, height:89px, font-size:30px, line-height:25px, color:#FFFFFF
+- The "x" is a literal "x" character (lowercase) in Clash Grotesk 30px
+- Position: left:21-22px (card-relative), top:146px (card-relative)
+
+VISUAL NOTES:
+- Cards have dark gradient overlay at bottom for text readability
+- Layout: 4 cards in a row, each ~248px wide, 22px gap between them
+- Total row width: 4×248 + 3×22 = 992+66 = 1058px, starting at left:80px
+- Section total height: 754px
