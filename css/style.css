@@ -2058,20 +2058,6 @@ a.scard {
   margin: 0 0 12px;
 }
 
-.case-highlights {
-  font-family: 'Clash Grotesk', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--otr-dark);
-  margin: 0 0 28px;
-}
-
-.case-highlights strong {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
 .case-stats {
   display: flex;
   gap: 12px;
