@@ -47,6 +47,25 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Portfolio — detalle de casos -->
+  <url><loc>https://www.ontherocks.com.ar/portfolio-aff.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-satellites.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-tim-draper.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-mobile-first.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-mapa-fintech.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-camara-fintech-medios.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-lyra.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-melian.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-incode.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-draper-cygnus.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-camara-fintech-branding.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-icona.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-manteca.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-newtopia.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-poincenot.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-bybit.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ontherocks.com.ar/portfolio-argy.html</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
   <!-- Página para agentes de IA -->
   <url>
     <loc>https://www.ontherocks.com.ar/ai/</loc>

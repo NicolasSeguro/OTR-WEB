@@ -1966,6 +1966,187 @@ a.scard {
   background: var(--otr-light);
 }
 
+/* ---- PORTFOLIO CASE STUDY PAGES ---- */
+.page-case {
+  background: var(--otr-light);
+}
+
+.case-page {
+  padding: 150px 0 0;
+}
+
+.case-page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.case-back {
+  display: inline-flex;
+  align-items: center;
+  color: var(--otr-blue-link);
+  margin-bottom: 40px;
+}
+
+.case-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--otr-dark);
+  margin: 0 0 16px;
+}
+
+.case-subtitle {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--otr-dark);
+  margin: 0 0 56px;
+}
+
+.case-hero {
+  width: 100%;
+  aspect-ratio: 1120 / 560;
+  background: #D9D9D9;
+  margin-bottom: 64px;
+  overflow: hidden;
+}
+
+.case-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-body {
+  column-count: 2;
+  column-gap: 64px;
+  padding-bottom: 100px;
+}
+
+.case-body p,
+.case-body .case-stats,
+.case-body .case-chips,
+.case-body .case-results-title {
+  break-inside: avoid;
+}
+
+.case-body p {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--otr-dark);
+  margin: 0 0 28px;
+}
+
+.case-body p strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.case-results-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--otr-dark);
+  margin: 0 0 12px;
+}
+
+.case-highlights {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--otr-dark);
+  margin: 0 0 28px;
+}
+
+.case-highlights strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.case-stats {
+  display: flex;
+  gap: 12px;
+  margin: 4px 0 28px;
+  flex-wrap: wrap;
+}
+
+.case-stat {
+  background: var(--otr-dark);
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 12px 16px;
+  min-width: 100px;
+}
+
+.case-stat.is-muted {
+  background: #C4C3C8;
+  color: var(--otr-dark);
+}
+
+.case-stat-num {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.case-stat-label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.case-chips {
+  display: flex;
+  gap: 10px;
+  margin: 4px 0 28px;
+  flex-wrap: wrap;
+}
+
+.case-chip {
+  background: var(--otr-dark);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+  .case-page-inner {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-page {
+    padding: 110px 0 0;
+  }
+
+  .case-page-inner {
+    padding: 0 24px;
+  }
+
+  .case-title {
+    font-size: 32px;
+  }
+
+  .case-body {
+    column-count: 1;
+  }
+}
+
 .legal-page {
   padding: 150px 0 100px;
 }
