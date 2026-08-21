@@ -67,10 +67,21 @@
         <p class="contact-form-hint">Dejanos tus datos para que podamos contactarte. Respondemos en menos de 48 hs.</p>
 
         <div class="contact-form-fields">
-          <input type="text" name="name" id="cf-name" placeholder="Nombre y apellido" autocomplete="name" required>
-          <input type="email" name="email" id="cf-email" placeholder="Email" autocomplete="email" required>
-          <textarea name="message" id="cf-message" placeholder="Contanos sobre tu proyecto" rows="3" required></textarea>
+          <div class="contact-field">
+            <label for="cf-name">Nombre y apellido</label>
+            <input type="text" name="name" id="cf-name" autocomplete="name" required>
+          </div>
+          <div class="contact-field">
+            <label for="cf-email">Email</label>
+            <input type="email" name="email" id="cf-email" autocomplete="email" required>
+          </div>
+          <div class="contact-field">
+            <label for="cf-message">Mensaje</label>
+            <textarea name="message" id="cf-message" rows="3" placeholder="Contanos sobre tu proyecto" required></textarea>
+          </div>
         </div>
+
+        <p class="contact-form-note">Al enviar se abre tu cliente de correo con estos datos ya completados.</p>
 
         <button type="submit" class="contact-submit">
           Enviar
@@ -78,6 +89,8 @@
             <path d="M3 9L9 3M9 3H4.5M9 3V7.5" stroke="#15141D" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
+
+        <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
       </form>
 
       <div class="contact-recruit" id="equipo">

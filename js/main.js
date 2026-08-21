@@ -148,12 +148,34 @@ if (portfolioFilters.length && portfolioCards.length) {
 }
 
 // Contact form — no backend yet, so "Enviar" opens the visitor's email
-// client with the fields pre-filled. Swap for a real submit once there's
-// an endpoint to send to.
+// client with the fields pre-filled. Swap for a real fetch() submit (with
+// this as the mailto fallback if it fails) once there's an endpoint to send to.
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
+  const statusEl = document.getElementById('contact-form-status');
+  const submitBtn = contactForm.querySelector('.contact-submit');
+  let isSubmitting = false;
+
+  const setStatus = (message, kind) => {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.remove('is-error', 'is-success');
+    if (kind) statusEl.classList.add(kind);
+  };
+
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      setStatus('Revisá los campos marcados antes de enviar.', 'is-error');
+      return;
+    }
+
+    isSubmitting = true;
+    if (submitBtn) submitBtn.disabled = true;
+
     const reason = contactForm.querySelector('input[name="reason"]:checked')?.value || '';
     const name = contactForm.querySelector('#cf-name')?.value || '';
     const email = contactForm.querySelector('#cf-email')?.value || '';
@@ -162,5 +184,12 @@ if (contactForm) {
     const subject = encodeURIComponent(`${reason} — ${name}`.trim());
     const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:hola@ontherocks.com.ar?subject=${subject}&body=${body}`;
+
+    setStatus('Se abrió tu cliente de correo con estos datos completados. Si no pasó nada, escribinos directamente a hola@ontherocks.com.ar.', 'is-success');
+
+    window.setTimeout(() => {
+      isSubmitting = false;
+      if (submitBtn) submitBtn.disabled = false;
+    }, 1500);
   });
 }

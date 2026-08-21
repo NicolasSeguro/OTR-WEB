@@ -1846,8 +1846,48 @@ a.scard {
 
 .contact-form-fields input:focus,
 .contact-form-fields textarea:focus {
-  outline: none;
   border-bottom-color: #0148E9;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-field label {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form-note {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 20px;
+}
+
+.contact-form-status {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 14px;
+  margin: 16px 0 0;
+  min-height: 1em;
+}
+
+.contact-form-status.is-error {
+  color: #FF8A80;
+}
+
+.contact-form-status.is-success {
+  color: #7FE0C4;
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .contact-submit {
@@ -2026,30 +2066,50 @@ a.scard {
   margin: 0 0 56px;
 }
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px 40px;
+.blog-empty {
+  max-width: 520px;
+  padding: 56px 40px;
+  border: 1px solid rgba(21, 20, 29, 0.12);
+  border-radius: 16px;
+  background: #FFFFFF;
 }
 
-.blog-card {
-  aspect-ratio: 16 / 6;
-  border-radius: 8px;
-  background: #D9D9D9;
-}
-
-.blog-card--pending {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.blog-card--pending span {
+.blog-empty-title {
   font-family: 'Clash Grotesk', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #9A9A9A;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--otr-dark);
+  margin: 0 0 12px;
+}
+
+.blog-empty-text {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #55545C;
+  margin: 0 0 28px;
+}
+
+.blog-empty-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 20px;
+  background: var(--otr-dark);
+  color: #FFFFFF;
+  border-radius: 27px;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.blog-empty-cta svg path {
+  stroke: #FFFFFF;
+}
+
+.blog-empty-cta:hover {
+  background: var(--otr-blue);
 }
 
 /* ---- RESPONSIVE (tablet/mobile) ---- */
@@ -2736,12 +2796,7 @@ a.scard {
     font-size: 40px;
   }
 
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .blog-card {
-    aspect-ratio: 16 / 9;
+  .blog-empty {
+    padding: 40px 24px;
   }
 }
