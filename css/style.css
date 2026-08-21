@@ -1593,20 +1593,6 @@ a.scard {
   margin: 0 0 14px;
 }
 
-.about-member-photo--pending {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.about-member-photo--pending span {
-  font-family: 'Clash Grotesk', sans-serif;
-  font-size: 12px;
-  line-height: 1.4;
-  color: #9A9A9A;
-}
-
 .about-member-name {
   font-family: 'Clash Grotesk', sans-serif;
   font-weight: 500;

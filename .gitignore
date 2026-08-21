@@ -5,3 +5,6 @@ __pycache__/
 .firecrawl/
 .claude/
 .cursor/
+
+# Raw Figma export dumps (reference material, not site assets)
+images/Pagina Web OTR (*)
