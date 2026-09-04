@@ -92,11 +92,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Section reveal on scroll
+// Section reveal on scroll (incluye el wordmark "ON THE ROCKS." del footer,
+// que hasta ahora aparecía sin ninguna animación de entrada)
 const revealTargets = document.querySelectorAll(
   '.section-work .work-inner, .section-portfolio .portfolio-inner, .section-service .service-inner, .section-trusted .trusted-inner, .section-faq .faq-inner, .section-contact .contact-inner'
 );
 revealTargets.forEach(el => el.classList.add('reveal'));
+
+// .contact-logotype ya trae su propio estado inicial/visible en CSS,
+// no necesita la clase genérica .reveal — solo que este observer le agregue is-visible.
+const logotypeTargets = document.querySelectorAll('.contact-logotype');
+const allRevealTargets = [...revealTargets, ...logotypeTargets];
 
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
@@ -108,9 +114,9 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  revealTargets.forEach(el => io.observe(el));
+  allRevealTargets.forEach(el => io.observe(el));
 } else {
-  revealTargets.forEach(el => el.classList.add('is-visible'));
+  allRevealTargets.forEach(el => el.classList.add('is-visible'));
 }
 
 // Portfolio page filters
@@ -118,33 +124,42 @@ const portfolioFilters = document.querySelectorAll('.portfolio-filter');
 const portfolioCards = document.querySelectorAll('.pgrid-card');
 
 if (portfolioFilters.length && portfolioCards.length) {
-  portfolioFilters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Figma no tiene un pill "todos": por defecto no hay ninguno activo y se
-      // ven todas las cards. Clickear un filtro ya activo lo apaga y vuelve
-      // a mostrar todo; clickear otro lo activa en exclusiva.
-      const alreadyActive = btn.classList.contains('is-active');
+  const activateFilter = (btn) => {
+    // Figma no tiene un pill "todos": por defecto no hay ninguno activo y se
+    // ven todas las cards. Clickear un filtro ya activo lo apaga y vuelve
+    // a mostrar todo; clickear otro lo activa en exclusiva.
+    const alreadyActive = btn.classList.contains('is-active');
 
-      portfolioFilters.forEach(b => {
-        b.classList.remove('is-active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-
-      if (alreadyActive) {
-        portfolioCards.forEach(card => card.classList.remove('is-hidden'));
-        return;
-      }
-
-      btn.classList.add('is-active');
-      btn.setAttribute('aria-pressed', 'true');
-
-      const filter = btn.getAttribute('data-filter');
-      portfolioCards.forEach(card => {
-        const show = card.getAttribute('data-cat') === filter;
-        card.classList.toggle('is-hidden', !show);
-      });
+    portfolioFilters.forEach(b => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-pressed', 'false');
     });
+
+    if (alreadyActive) {
+      portfolioCards.forEach(card => card.classList.remove('is-hidden'));
+      return;
+    }
+
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+
+    const filter = btn.getAttribute('data-filter');
+    portfolioCards.forEach(card => {
+      const show = card.getAttribute('data-cat') === filter;
+      card.classList.toggle('is-hidden', !show);
+    });
+  };
+
+  portfolioFilters.forEach(btn => {
+    btn.addEventListener('click', () => activateFilter(btn));
   });
+
+  // Llegar desde SERVICE con ?filter=audiovisual activa esa tab directamente.
+  const requestedFilter = new URLSearchParams(window.location.search).get('filter');
+  if (requestedFilter) {
+    const targetBtn = Array.from(portfolioFilters).find(b => b.getAttribute('data-filter') === requestedFilter);
+    if (targetBtn) activateFilter(targetBtn);
+  }
 }
 
 // Contact form — no backend yet, so "Enviar" opens the visitor's email

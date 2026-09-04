@@ -260,7 +260,8 @@ img {
 .hero {
   position: relative;
   width: 100%;
-  height: 693px;
+  height: 100vh;
+  min-height: 640px;
   background-image: url('../images/hero-bg.png');
   background-size: cover;
   background-position: center top;
@@ -278,11 +279,13 @@ img {
   pointer-events: none;
 }
 
-/* Figma: "Comunicación integral..." — width:1007px, height:116px, left:60px, top:492px, font-size:50px, line-height:55px, color:#FFFFFF */
+/* Figma: "Comunicación integral..." — width:1007px, height:116px, left:60px, bottom:91px, font-size:50px, line-height:55px, color:#FFFFFF */
+/* Anclado al bottom (no al top) para que funcione con el hero a 100vh: mantiene */
+/* el mismo margen respecto del borde inferior sin importar la altura del viewport. */
 .hero-content {
   position: absolute;
   left: 60px;
-  top: 492px;
+  bottom: 91px;
   width: 1007px;
 }
 
@@ -398,6 +401,18 @@ img {
   height: 55px;
 }
 
+.work-heading-line1,
+.work-heading-line2,
+.work-heading-line3 {
+  transition: color 0.3s ease;
+}
+
+.work-heading:hover .work-heading-line1,
+.work-heading:hover .work-heading-line2,
+.work-heading:hover .work-heading-line3 {
+  color: var(--otr-blue-link);
+}
+
 /* Figma: "Ayudamos a compañías..." — left:80px, top:1192px (page) = top:499px (section) */
 /* width:1124px, height:60px, font-size:20px, line-height:30px */
 .work-body {
@@ -461,10 +476,13 @@ img {
 
 /* ---- SHARED PCARD BASE ---- */
 .pcard {
+  display: block;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   flex-shrink: 0;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* TOP ROW widths: 3 equal columns from 1280px = ~426.67px each */
@@ -628,6 +646,44 @@ img {
 .pcard-4 .pcard-num,
 .pcard-5 .pcard-num {
   top: 162px;
+}
+
+/* ---- HOVER: reveal description, hide icon+num ---- */
+/* Figma: al pasar el mouse se agrega el texto y se va la imagen (si tiene) */
+.pcard-icon,
+.pcard-num {
+  transition: opacity 0.3s ease;
+}
+
+.pcard-desc {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #FFFFFF;
+  position: absolute;
+  left: 59px;
+  top: 345px;
+  bottom: 20px;
+  width: calc(100% - 100px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pcard-4 .pcard-desc,
+.pcard-5 .pcard-desc {
+  top: 145px;
+}
+
+.pcard:hover .pcard-icon,
+.pcard:hover .pcard-num {
+  opacity: 0;
+}
+
+.pcard:hover .pcard-desc {
+  opacity: 1;
 }
 
 /* ---- BLUE BAR ---- */
@@ -815,6 +871,9 @@ a.scard {
   margin: 0 auto;
   /* No horizontal padding — grid borders go edge-to-edge inside the 1120px content area */
   padding: 0;
+  /* El margen inferior vacío debe igualar al superior (90px del label + 55px de su
+     line-height + 20px de margin-top = 165px) — antes quedaba mucho más angosto. */
+  padding-bottom: 165px;
 }
 
 /* Figma: "004 TRUSTED BY" — left:80px, top:3266px (section offset:90px), 20px, #666666 */
@@ -1141,6 +1200,15 @@ a.scard {
   height: 124px;
   display: flex;
   align-items: flex-end;
+  /* Animación final del wordmark al entrar en vista — referencia: footer de wolffolins.com */
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.contact-logotype.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-logotype img {
@@ -1168,6 +1236,12 @@ a.scard {
   .hero-text,
   .reveal {
     animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .contact-logotype {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -1317,9 +1391,23 @@ a.scard {
 .about-hero-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center 30%;
+  overflow: hidden;
   opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Cubre el contenedor con el iframe de YouTube manteniendo 16:9 —
+   funciona tanto si el ancho como si el alto del hero es el lado más restrictivo. */
+.about-hero-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-width: 177.78vh;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  border: 0;
 }
 
 .about-hero-gradient {
@@ -1404,7 +1492,7 @@ a.scard {
   line-height: 1.35;
   color: #FFFFFF;
   max-width: 980px;
-  margin: 0;
+  margin: 0 0 0 64px;
 }
 
 .about-accent {
@@ -1623,14 +1711,6 @@ a.scard {
   padding: 0 40px;
 }
 
-.portfolio-page-label {
-  font-family: 'Clash Grotesk', sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  color: #666666;
-  margin: 0 0 20px;
-}
-
 .portfolio-filters {
   display: flex;
   flex-wrap: wrap;
@@ -1646,7 +1726,7 @@ a.scard {
   color: #15141D;
   background: transparent;
   border: 0.5px solid #15141D;
-  border-radius: 27px;
+  border-radius: 12px;
   width: 210px;
   min-height: 62px;
   padding: 10px 16px;
@@ -2032,7 +2112,8 @@ a.scard {
 .case-body p,
 .case-body .case-stats,
 .case-body .case-chips,
-.case-body .case-results-title {
+.case-body .case-results-title,
+.case-body .case-result-group {
   break-inside: avoid;
 }
 
@@ -2213,14 +2294,6 @@ a.scard {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 80px;
-}
-
-.blog-page-label {
-  font-family: 'Clash Grotesk', sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  color: #888888;
-  margin: 0 0 12px;
 }
 
 .blog-page-title {
@@ -2679,6 +2752,10 @@ a.scard {
     font-size: 26px;
   }
 
+  .about-vision-text {
+    margin-left: 24px;
+  }
+
   .about-mission-title {
     font-size: 26px;
   }
@@ -2730,6 +2807,7 @@ a.scard {
 
   .hero {
     height: 500px;
+    min-height: 0;
   }
 
   .hero-text {
@@ -2740,6 +2818,7 @@ a.scard {
   .hero-content {
     left: 24px;
     top: 340px;
+    bottom: auto;
     width: calc(100% - 48px);
   }
 
