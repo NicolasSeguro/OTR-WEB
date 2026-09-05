@@ -9,6 +9,7 @@ __pycache__/
 # Raw Figma export dumps (reference material, not site assets)
 images/Pagina Web OTR (*)
 
-# Raw video source files (too large for git; compress before adding to site)
-*.mp4
-*.mov
+# Raw video source files (too large for git; compress before adding to site).
+# The compressed, web-ready versions live in video/ and ARE tracked.
+/video-hero.mp4
+/*.mov

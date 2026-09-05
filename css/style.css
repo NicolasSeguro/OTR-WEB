@@ -262,11 +262,27 @@ img {
   width: 100%;
   height: 100vh;
   min-height: 640px;
-  background-image: url('../images/hero-bg.png');
+  /* Fallback si el <video> no carga (navegador sin soporte, red lenta, etc). */
+  background-image: url('../images/hero-video-poster.jpg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
 }
 
 .hero-gradient {
