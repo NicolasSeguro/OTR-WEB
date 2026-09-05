@@ -2018,6 +2018,120 @@ a.scard {
   stroke: #FFFFFF;
 }
 
+/* ---- CONTACT MODAL (footer "Get in touch") ---- */
+/* Referencia: popup claro sobre overlay oscuro, con el mismo formulario
+   que /contact.html pero en versión clara (fondo blanco, texto oscuro). */
+.contact-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(21, 20, 29, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px;
+}
+
+.contact-modal-overlay[hidden] {
+  display: none;
+}
+
+.contact-modal {
+  position: relative;
+  background: #F5F3EF;
+  color: #15141D;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  border-radius: 4px;
+  padding: 56px 48px 48px;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 14px;
+  color: #15141D;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.contact-modal-close:hover {
+  opacity: 1;
+}
+
+.contact-modal-title {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  color: #15141D;
+  margin: 0 0 32px;
+}
+
+.contact-modal .contact-radio,
+.contact-modal .contact-jobs-link,
+.contact-modal .contact-field label {
+  color: #15141D;
+}
+
+.contact-modal .contact-form-hint,
+.contact-modal .contact-form-note {
+  color: rgba(21, 20, 29, 0.6);
+}
+
+.contact-modal .contact-radio-dot {
+  border-color: rgba(21, 20, 29, 0.4);
+}
+
+.contact-modal .contact-radio input:checked + .contact-radio-dot::after {
+  background: #15141D;
+}
+
+.contact-modal .contact-form-fields input,
+.contact-modal .contact-form-fields textarea {
+  color: #15141D;
+  border-bottom-color: rgba(21, 20, 29, 0.3);
+}
+
+.contact-modal .contact-form-fields input::placeholder,
+.contact-modal .contact-form-fields textarea::placeholder {
+  color: rgba(21, 20, 29, 0.4);
+}
+
+.contact-modal .contact-submit {
+  background: #15141D;
+  color: #FFFFFF;
+}
+
+.contact-modal .contact-submit svg path {
+  stroke: #FFFFFF;
+}
+
+.contact-modal .contact-submit:hover {
+  background: #0148E9;
+}
+
+@media (max-width: 600px) {
+  .contact-modal-overlay {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .contact-modal {
+    max-width: none;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 56px 24px 40px;
+  }
+}
+
 .contact-recruit {
   max-width: 620px;
   margin-top: 80px;
