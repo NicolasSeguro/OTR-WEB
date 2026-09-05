@@ -1125,6 +1125,14 @@ a.scard {
   letter-spacing: 0.05em;
 }
 
+.contact-location {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
 /* Figma: Rectangle 25 — width:167px, height:33px, left:122px, top:4827px, bg:#15141D, border:0.5px solid white, border-radius:27px */
 /* Figma: "Get in touch" — left:138px (padding-left:16px), top:4816px, 20px, white */
 /* Figma: Vector 10 — left:257px (right side of button), 12×12px, circle+arrow, white */
@@ -1407,23 +1415,9 @@ a.scard {
 .about-hero-bg {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center 30%;
   opacity: 0.7;
-  pointer-events: none;
-}
-
-/* Cubre el contenedor con el iframe de YouTube manteniendo 16:9 —
-   funciona tanto si el ancho como si el alto del hero es el lado más restrictivo. */
-.about-hero-bg iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw;
-  min-width: 177.78vh;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  border: 0;
 }
 
 .about-hero-gradient {
@@ -2019,33 +2013,38 @@ a.scard {
 }
 
 /* ---- CONTACT MODAL (footer "Get in touch") ---- */
-/* Referencia: popup claro sobre overlay oscuro, con el mismo formulario
-   que /contact.html pero en versión clara (fondo blanco, texto oscuro). */
-.contact-modal-overlay {
+/* Referencia: el propio footer (a su tamaño real, no un card flotante en el
+   centro de la pantalla) se convierte en el formulario claro. El resto de la
+   página por encima se atenúa con un overlay fijo; el panel del formulario
+   vive DENTRO de .section-contact (que ya es position:relative), anclado a
+   la derecha y ocupando toda su altura, dejando "CONTACT US" visible a la
+   izquierda tal como en la referencia. */
+.contact-dim-overlay {
   position: fixed;
   inset: 0;
-  z-index: 200;
-  background: rgba(21, 20, 29, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 40px;
+  z-index: 150;
+  background: rgba(21, 20, 29, 0.55);
 }
 
-.contact-modal-overlay[hidden] {
+.contact-dim-overlay[hidden] {
   display: none;
 }
 
 .contact-modal {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 160;
   background: #F5F3EF;
   color: #15141D;
-  width: 100%;
-  max-width: 480px;
-  max-height: calc(100vh - 80px);
+  width: min(480px, 100%);
   overflow-y: auto;
-  border-radius: 4px;
   padding: 56px 48px 48px;
+}
+
+.contact-modal[hidden] {
+  display: none;
 }
 
 .contact-modal-close {
@@ -2119,15 +2118,8 @@ a.scard {
 }
 
 @media (max-width: 600px) {
-  .contact-modal-overlay {
-    padding: 0;
-    align-items: stretch;
-  }
-
   .contact-modal {
-    max-width: none;
-    max-height: 100vh;
-    border-radius: 0;
+    width: 100%;
     padding: 56px 24px 40px;
   }
 }
