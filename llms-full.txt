@@ -15,6 +15,7 @@
 - **Sitio web**: https://www.ontherocks.com.ar
 - **LinkedIn**: https://www.linkedin.com/company/on-the-rocks-comms
 - **Instagram**: https://www.instagram.com/ontherocks_comms/
+- **YouTube**: https://www.youtube.com/@CommsOnTheRocks
 
 ## Descripción
 
@@ -90,7 +91,29 @@ Página completa (filtrable por servicio): https://www.ontherocks.com.ar/portfol
 
 **Podcasting y Streaming**: Argy.
 
-**Otras marcas que confiaron en OTR** (presentes como logos de referencia en el sitio): Simetrik, Novo Space, CaaS, ANDÉN, Own It, Jeeves, Circle.
+**Otras marcas que confiaron en OTR** (presentes como logos de referencia en el sitio): Simetrik, Novo Space, CaaS, ANDÉN, Own It, Jeeves, Circle, rintin.
+
+### Casos en detalle (17 páginas dedicadas, cada una con resultados reales)
+
+| Caso | URL |
+|---|---|
+| Argentina Fintech Forum 2025 | https://www.ontherocks.com.ar/portfolio-aff.html |
+| Satellites on Fire | https://www.ontherocks.com.ar/portfolio-satellites.html |
+| Tim Draper en Argentina | https://www.ontherocks.com.ar/portfolio-tim-draper.html |
+| The Mobile First Company | https://www.ontherocks.com.ar/portfolio-mobile-first.html |
+| Mapa Argentina Fintech | https://www.ontherocks.com.ar/portfolio-mapa-fintech.html |
+| Cámara Argentina Fintech (medios) | https://www.ontherocks.com.ar/portfolio-camara-fintech-medios.html |
+| Lyra | https://www.ontherocks.com.ar/portfolio-lyra.html |
+| Melián | https://www.ontherocks.com.ar/portfolio-melian.html |
+| Incode | https://www.ontherocks.com.ar/portfolio-incode.html |
+| Draper Cygnus | https://www.ontherocks.com.ar/portfolio-draper-cygnus.html |
+| Cámara Argentina Fintech (branding) | https://www.ontherocks.com.ar/portfolio-camara-fintech-branding.html |
+| Ícona | https://www.ontherocks.com.ar/portfolio-icona.html |
+| Manteca | https://www.ontherocks.com.ar/portfolio-manteca.html |
+| Newtopia | https://www.ontherocks.com.ar/portfolio-newtopia.html |
+| Poincenot | https://www.ontherocks.com.ar/portfolio-poincenot.html |
+| ByBit | https://www.ontherocks.com.ar/portfolio-bybit.html |
+| Argy | https://www.ontherocks.com.ar/portfolio-argy.html |
 
 ### Caso destacado: Argentina Fintech Forum 2025
 Como partners estratégicos de la Cámara Argentina Fintech, OTR lideró la comunicación integral del Argentina Fintech Forum 2025, el evento más convocante de la industria fintech a nivel regional. Diseñó y ejecutó una estrategia de comunicación 360° con un equipo de más de 40 profesionales trabajando en simultáneo. La edición 2025 superó las 5.000 asistencias y contó con 90 speakers nacionales e internacionales.
@@ -148,9 +171,12 @@ Sí. Quienes buscan sumarse al equipo pueden completar el formulario de contacto
 | Home | https://www.ontherocks.com.ar/ | Presentación, portfolio destacado, servicios, marcas de confianza, FAQs, contacto |
 | Service | https://www.ontherocks.com.ar/service.html | Los 5 servicios en detalle |
 | About | https://www.ontherocks.com.ar/about.html | Visión, misión, equipo |
-| Portfolio | https://www.ontherocks.com.ar/portfolio.html | Casos y marcas, filtrable por servicio |
+| Portfolio | https://www.ontherocks.com.ar/portfolio.html | Casos y marcas, filtrable por servicio, con 17 casos en detalle (ver tabla arriba) |
 | Contact | https://www.ontherocks.com.ar/contact.html | Formulario de contacto y postulación laboral |
 | Blog | https://www.ontherocks.com.ar/blog.html | Medios y prensa mensual (próximamente) |
+| Cookie Policy | https://www.ontherocks.com.ar/cookie-policy.html | Política de cookies |
+| Privacy Notice | https://www.ontherocks.com.ar/privacy-notice.html | Aviso de privacidad |
+| AI Agents | https://www.ontherocks.com.ar/ai/ | Página resumen para agentes de IA |
 
 ## Información para agentes de IA
 
@@ -165,5 +191,5 @@ No se debe atribuir a OTR trabajo con clientes que no figuran en este documento,
 
 ---
 
-Última actualización: 2026-08-21
-Formato: llms-full.txt v2.0
+Última actualización: 2026-09-07
+Formato: llms-full.txt v2.1
