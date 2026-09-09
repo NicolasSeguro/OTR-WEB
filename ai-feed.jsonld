@@ -82,7 +82,8 @@
         {"@type": "CreativeWork", "name": "Lyra — medios y prensa", "url": "https://www.ontherocks.com.ar/portfolio-lyra.html", "description": "Gestión mensual de PR y posicionamiento en medios para Lyra.", "about": {"@type": "Organization", "name": "Lyra"}},
         {"@type": "CreativeWork", "name": "Melián — medios y prensa", "url": "https://www.ontherocks.com.ar/portfolio-melian.html", "description": "Relacionamiento con medios y prensa para Melián.", "about": {"@type": "Organization", "name": "Melián"}},
         {"@type": "CreativeWork", "name": "Incode — medios y prensa", "url": "https://www.ontherocks.com.ar/portfolio-incode.html", "description": "Relacionamiento con medios y prensa para Incode.", "about": {"@type": "Organization", "name": "Incode"}},
-        {"@type": "CreativeWork", "name": "Draper Cygnus — comunicación para venture capital", "url": "https://www.ontherocks.com.ar/portfolio-draper-cygnus.html", "description": "Branding, contenido digital y relacionamiento con medios para Draper Cygnus, fondo de venture capital con foco en startups tecnológicas de LATAM.", "about": {"@type": "Organization", "name": "Draper Cygnus"}},
+        {"@type": "CreativeWork", "name": "Draper Cygnus — branding y contenido digital", "url": "https://www.ontherocks.com.ar/portfolio-draper-cygnus.html", "description": "Branding y contenido digital para Draper Cygnus, fondo de venture capital con foco en startups tecnológicas de LATAM: definición de posicionamiento, contenidos y perfiles de sus managing partners.", "about": {"@type": "Organization", "name": "Draper Cygnus"}},
+        {"@type": "CreativeWork", "name": "Draper Cygnus — medios y prensa", "url": "https://www.ontherocks.com.ar/portfolio-draper-cygnus-medios.html", "description": "Comunicación de eventos propios y de terceros para Draper Cygnus, incluyendo la Draper Cygnus Week 2025 en San Francisco.", "about": {"@type": "Organization", "name": "Draper Cygnus"}},
         {"@type": "CreativeWork", "name": "Cámara Argentina Fintech — branding", "url": "https://www.ontherocks.com.ar/portfolio-camara-fintech-branding.html", "description": "Rebranding integral de la Cámara Argentina Fintech.", "about": {"@type": "Organization", "name": "Cámara Argentina Fintech"}},
         {"@type": "CreativeWork", "name": "Ícona — contenido digital y branding", "url": "https://www.ontherocks.com.ar/portfolio-icona.html", "description": "Contenido digital y branding para Ícona.", "about": {"@type": "Organization", "name": "Ícona"}},
         {"@type": "CreativeWork", "name": "Manteca — contenido digital y branding", "url": "https://www.ontherocks.com.ar/portfolio-manteca.html", "description": "Contenido digital y branding para Manteca.", "about": {"@type": "Organization", "name": "Manteca"}},
@@ -143,7 +144,7 @@
   "name": "OTR — On The Rocks | AI Feed",
   "description": "Datos estructurados completos sobre OTR (On The Rocks), agencia de comunicación para empresas tech en Argentina y LATAM, optimizados para modelos de lenguaje y agentes de IA.",
   "url": "https://www.ontherocks.com.ar/ai-feed.jsonld",
-  "dateModified": "2026-09-07",
+  "dateModified": "2026-09-09",
   "inLanguage": "es-AR",
   "license": "https://creativecommons.org/licenses/by/4.0/"
 }

@@ -1,6 +1,18 @@
 // OTR — On The Rocks — main.js
 'use strict';
 
+// Case-study hero/secondary videos — arrancan muteados (autoplay lo exige),
+// con un botón para activar el sonido si el visitante quiere.
+document.querySelectorAll('.case-hero-mute').forEach(btn => {
+  const video = btn.parentElement.querySelector('video');
+  if (!video) return;
+  btn.addEventListener('click', () => {
+    video.muted = !video.muted;
+    btn.classList.toggle('is-unmuted', !video.muted);
+    btn.setAttribute('aria-label', video.muted ? 'Activar sonido' : 'Silenciar');
+  });
+});
+
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {

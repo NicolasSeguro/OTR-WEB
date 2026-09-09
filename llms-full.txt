@@ -93,7 +93,7 @@ Página completa (filtrable por servicio): https://www.ontherocks.com.ar/portfol
 
 **Otras marcas que confiaron en OTR** (presentes como logos de referencia en el sitio): Simetrik, Novo Space, CaaS, ANDÉN, Own It, Jeeves, Circle, rintin.
 
-### Casos en detalle (17 páginas dedicadas, cada una con resultados reales)
+### Casos en detalle (18 páginas dedicadas, cada una con video y resultados reales)
 
 | Caso | URL |
 |---|---|
@@ -106,7 +106,8 @@ Página completa (filtrable por servicio): https://www.ontherocks.com.ar/portfol
 | Lyra | https://www.ontherocks.com.ar/portfolio-lyra.html |
 | Melián | https://www.ontherocks.com.ar/portfolio-melian.html |
 | Incode | https://www.ontherocks.com.ar/portfolio-incode.html |
-| Draper Cygnus | https://www.ontherocks.com.ar/portfolio-draper-cygnus.html |
+| Draper Cygnus (branding) | https://www.ontherocks.com.ar/portfolio-draper-cygnus.html |
+| Draper Cygnus (medios) | https://www.ontherocks.com.ar/portfolio-draper-cygnus-medios.html |
 | Cámara Argentina Fintech (branding) | https://www.ontherocks.com.ar/portfolio-camara-fintech-branding.html |
 | Ícona | https://www.ontherocks.com.ar/portfolio-icona.html |
 | Manteca | https://www.ontherocks.com.ar/portfolio-manteca.html |
@@ -191,5 +192,5 @@ No se debe atribuir a OTR trabajo con clientes que no figuran en este documento,
 
 ---
 
-Última actualización: 2026-09-07
+Última actualización: 2026-09-09
 Formato: llms-full.txt v2.1
