@@ -554,6 +554,20 @@ img {
   transform: scale(1.04);
 }
 
+/* ---- CARD PHOTO (cards 1, 2, 4 — real photos over the abstract .pcard-bg) ---- */
+/* Figma: al pasar el mouse la foto se va y queda el gradiente + descripción */
+.pcard-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.35s ease;
+}
+
+.pcard:hover .pcard-photo {
+  opacity: 0;
+}
+
 /* ---- CARD CONTENT ---- */
 /* Figma: content positioned at bottom-left of each card */
 /* icon at ~138px from card top, title at ~207px, service at ~284px, num at ~397px */

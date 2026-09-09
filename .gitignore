@@ -15,3 +15,7 @@ images/contact
 # The compressed, web-ready versions live in video/ and ARE tracked.
 /video-hero.mp4
 /*.mov
+
+# Raw client asset drops (source material, not site assets) — processed
+# outputs get copied into images/ and video/ where they belong.
+/restantes
