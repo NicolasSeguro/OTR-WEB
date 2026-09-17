@@ -660,6 +660,11 @@ img {
   width: calc(100% - 80px);
 }
 
+.pcard-1 .pcard-service {
+  width: calc(100% - 70px);
+  white-space: nowrap;
+}
+
 .pcard-4 .pcard-service,
 .pcard-5 .pcard-service {
   top: 107px;
@@ -2031,22 +2036,27 @@ a.scard {
   stroke: #FFFFFF;
 }
 
-/* ---- CONTACT MODAL (footer "Get in touch") ---- */
-/* Referencia: el propio footer (a su tamaño real, no un card flotante en el
-   centro de la pantalla) se convierte en el formulario claro. El resto de la
-   página por encima se atenúa con un overlay fijo; el panel del formulario
-   vive DENTRO de .section-contact (que ya es position:relative), anclado a
-   la derecha y ocupando toda su altura, dejando "CONTACT US" visible a la
-   izquierda tal como en la referencia. */
+/* ---- CONTACT PANEL (footer "Get in touch") ---- */
+/* Figma: Rectangle 43 — 774×693, anclado a la derecha del footer 1282×693.
+   Se expande desde la derecha (translateX) y deja CONTACT US + logotype a la
+   izquierda. El resto de la página se atenúa; el footer queda por encima. */
 .contact-dim-overlay {
   position: fixed;
   inset: 0;
-  z-index: 150;
+  z-index: 2000;
   background: rgba(21, 20, 29, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
 }
 
-.contact-dim-overlay[hidden] {
-  display: none;
+.contact-dim-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-contact.is-contact-open {
+  z-index: 2100;
 }
 
 .contact-modal {
@@ -2054,22 +2064,47 @@ a.scard {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 160;
-  background: #F5F3EF;
+  z-index: 1;
+  background: #FFFFFF;
   color: #15141D;
-  width: min(480px, 100%);
+  width: min(774px, 100%);
   overflow-y: auto;
-  padding: 56px 48px 48px;
+  padding: 91px 65px 64px;
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              visibility 0s linear 0.55s;
 }
 
-.contact-modal[hidden] {
-  display: none;
+.contact-modal.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              visibility 0s linear 0s;
+}
+
+.contact-modal:focus {
+  outline: none;
+}
+
+.contact-modal-body {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.35s ease 0.18s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.contact-modal.is-open .contact-modal-body {
+  opacity: 1;
+  transform: none;
 }
 
 .contact-modal-close {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 39px;
+  right: 32px;
+  z-index: 2;
   background: none;
   border: none;
   font-family: 'Clash Grotesk', sans-serif;
@@ -2087,10 +2122,10 @@ a.scard {
 .contact-modal-title {
   font-family: 'Clash Grotesk', sans-serif;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 40px;
+  line-height: 1.15;
   color: #15141D;
-  margin: 0 0 32px;
+  margin: 0 0 48px;
 }
 
 .contact-modal .contact-radio,
@@ -2136,10 +2171,35 @@ a.scard {
   background: #0148E9;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .contact-modal {
     width: 100%;
-    padding: 56px 24px 40px;
+    padding: 72px 24px 40px;
+  }
+
+  .contact-modal-title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-dim-overlay,
+  .contact-modal,
+  .contact-modal-body {
+    transition: none;
+  }
+
+  .contact-modal {
+    transform: none;
+  }
+
+  .contact-modal:not(.is-open) {
+    visibility: hidden;
+  }
+
+  .contact-modal-body {
+    transform: none;
   }
 }
 
@@ -2190,6 +2250,7 @@ a.scard {
 /* ---- PORTFOLIO CASE STUDY PAGES ---- */
 .page-case {
   background: var(--otr-light);
+  overflow-x: hidden;
 }
 
 .case-page {
@@ -2231,7 +2292,9 @@ a.scard {
 
 .case-hero {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
   aspect-ratio: 1280 / 550;
   background: #D9D9D9;
   margin-bottom: 64px;
@@ -2315,8 +2378,31 @@ a.scard {
 .case-body .case-stats,
 .case-body .case-chips,
 .case-body .case-results-title,
-.case-body .case-result-group {
+.case-body .case-result-group,
+.case-body .case-channel,
+.case-body .case-metrics {
   break-inside: avoid;
+}
+
+.case-body--split {
+  column-count: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+  align-items: start;
+}
+
+.case-metrics {
+  column-span: all;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 64px;
+}
+
+.case-metrics--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .case-body p {
@@ -2341,19 +2427,34 @@ a.scard {
   margin: 0 0 12px;
 }
 
-.case-stats {
+.case-channel {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.case-channel svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
   margin: 4px 0 28px;
-  flex-wrap: wrap;
 }
 
 .case-stat {
   background: var(--otr-dark);
   color: #FFFFFF;
-  border-radius: 10px;
-  padding: 12px 16px;
-  min-width: 100px;
+  border-radius: 13.5px;
+  padding: 14px 16px;
+  min-height: 90px;
+  box-sizing: border-box;
 }
 
 .case-stat.is-muted {
@@ -2364,16 +2465,16 @@ a.scard {
 .case-stat-num {
   font-family: 'Clash Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 1;
+  font-size: 32px;
+  line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
 
 .case-stat-label {
   font-family: 'Clash Grotesk', sans-serif;
-  font-size: 11px;
-  line-height: 1.3;
-  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.25;
+  margin-top: 6px;
 }
 
 .case-chips {
@@ -2387,9 +2488,10 @@ a.scard {
   background: var(--otr-dark);
   color: #FFFFFF;
   border-radius: 50px;
-  width: 168px;
+  width: auto;
+  min-width: 120px;
   height: 36px;
-  padding: 0 12px;
+  padding: 0 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2400,6 +2502,12 @@ a.scard {
   line-height: 1;
   text-align: center;
   box-sizing: border-box;
+}
+
+.case-chip--market {
+  width: 168px;
+  min-width: 168px;
+  padding: 0 12px;
 }
 
 @media (max-width: 1100px) {
@@ -2423,6 +2531,11 @@ a.scard {
 
   .case-body {
     column-count: 1;
+  }
+
+  .case-body--split,
+  .case-metrics {
+    grid-template-columns: 1fr;
   }
 
   .case-hero-secondary {

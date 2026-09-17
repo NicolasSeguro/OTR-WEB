@@ -227,10 +227,9 @@ function wireContactForm(contactForm) {
 
 wireContactForm(document.getElementById('contact-form'));
 
-// Footer "Get in touch" → el propio footer (.section-contact, a su tamaño
-// real) revela el formulario ahí mismo, anclado a la derecha, en vez de
-// navegar a /contact.html (excepto en la propia página de contacto, donde
-// el formulario completo ya está a la vista).
+// Footer "Get in touch" → el propio footer revela el formulario a la derecha
+// (panel 774px que se expande desde el borde, como en Figma). Excepto en
+// /contact.html, donde el formulario completo ya está a la vista.
 const footerSection = document.querySelector('.section-contact');
 const contactTriggers = Array.from(document.querySelectorAll('.contact-btn'))
   .filter(btn => !document.body.classList.contains('page-contact'));
@@ -238,74 +237,80 @@ const contactTriggers = Array.from(document.querySelectorAll('.contact-btn'))
 if (contactTriggers.length && footerSection) {
   const dimOverlay = document.createElement('div');
   dimOverlay.className = 'contact-dim-overlay';
-  dimOverlay.hidden = true;
+  dimOverlay.setAttribute('aria-hidden', 'true');
   document.body.appendChild(dimOverlay);
 
   const modalPanel = document.createElement('div');
   modalPanel.className = 'contact-modal';
-  modalPanel.hidden = true;
   modalPanel.setAttribute('role', 'dialog');
   modalPanel.setAttribute('aria-modal', 'true');
+  modalPanel.setAttribute('aria-hidden', 'true');
   modalPanel.setAttribute('aria-labelledby', 'contact-modal-title');
+  modalPanel.setAttribute('tabindex', '-1');
   modalPanel.innerHTML = `
     <button type="button" class="contact-modal-close">close</button>
-    <h2 id="contact-modal-title" class="contact-modal-title">¿Tenés un proyecto en mente?</h2>
-    <form class="contact-form" id="contact-modal-form" novalidate>
-      <fieldset class="contact-reasons">
-        <legend class="sr-only">Motivo de contacto</legend>
-        <label class="contact-radio">
-          <input type="radio" name="reason" value="Nuevos negocios" checked>
-          <span class="contact-radio-dot" aria-hidden="true"></span>
-          Nuevos negocios
-        </label>
-        <label class="contact-radio">
-          <input type="radio" name="reason" value="Consultas de prensa">
-          <span class="contact-radio-dot" aria-hidden="true"></span>
-          Consultas de prensa
-        </label>
-        <label class="contact-radio">
-          <input type="radio" name="reason" value="Todo lo demás">
-          <span class="contact-radio-dot" aria-hidden="true"></span>
-          Todo lo demás
-        </label>
-      </fieldset>
+    <div class="contact-modal-body">
+      <h2 id="contact-modal-title" class="contact-modal-title">¿Tenés un proyecto en mente?</h2>
+      <form class="contact-form" id="contact-modal-form" novalidate>
+        <fieldset class="contact-reasons">
+          <legend class="sr-only">Motivo de contacto</legend>
+          <label class="contact-radio">
+            <input type="radio" name="reason" value="Nuevos negocios" checked>
+            <span class="contact-radio-dot" aria-hidden="true"></span>
+            Nuevos negocios
+          </label>
+          <label class="contact-radio">
+            <input type="radio" name="reason" value="Consultas de prensa">
+            <span class="contact-radio-dot" aria-hidden="true"></span>
+            Consultas de prensa
+          </label>
+          <label class="contact-radio">
+            <input type="radio" name="reason" value="Todo lo demás">
+            <span class="contact-radio-dot" aria-hidden="true"></span>
+            Todo lo demás
+          </label>
+        </fieldset>
 
-      <a href="contact.html#equipo" class="contact-jobs-link">¿Buscás oportunidades laborales?</a>
+        <a href="contact.html#equipo" class="contact-jobs-link">¿Buscás oportunidades laborales?</a>
 
-      <p class="contact-form-hint">Dejanos tus datos para que podamos contactarte. Respondemos en menos de 48 hs.</p>
+        <p class="contact-form-hint">Dejanos tus datos para que podamos contactarte. Respondemos en menos de 48 hs.</p>
 
-      <div class="contact-form-fields">
-        <div class="contact-field">
-          <label for="cfm-name">Nombre y apellido</label>
-          <input type="text" name="name" id="cfm-name" autocomplete="name" required>
+        <div class="contact-form-fields">
+          <div class="contact-field">
+            <label for="cfm-name">Nombre y apellido</label>
+            <input type="text" name="name" id="cfm-name" autocomplete="name" required>
+          </div>
+          <div class="contact-field">
+            <label for="cfm-email">Email</label>
+            <input type="email" name="email" id="cfm-email" autocomplete="email" required>
+          </div>
+          <div class="contact-field">
+            <label for="cfm-message">Mensaje</label>
+            <textarea name="message" id="cfm-message" rows="3" placeholder="Contanos sobre tu proyecto" required></textarea>
+          </div>
         </div>
-        <div class="contact-field">
-          <label for="cfm-email">Email</label>
-          <input type="email" name="email" id="cfm-email" autocomplete="email" required>
-        </div>
-        <div class="contact-field">
-          <label for="cfm-message">Mensaje</label>
-          <textarea name="message" id="cfm-message" rows="3" placeholder="Contanos sobre tu proyecto" required></textarea>
-        </div>
-      </div>
 
-      <p class="contact-form-note">Al enviar se abre tu cliente de correo con estos datos ya completados.</p>
+        <p class="contact-form-note">Al enviar se abre tu cliente de correo con estos datos ya completados.</p>
 
-      <button type="submit" class="contact-submit">
-        Enviar
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-          <path d="M3 9L9 3M9 3H4.5M9 3V7.5" stroke="#15141D" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+        <button type="submit" class="contact-submit">
+          Enviar
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M3 9L9 3M9 3H4.5M9 3V7.5" stroke="#15141D" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-      <p class="contact-form-status" role="status" aria-live="polite"></p>
-    </form>
+        <p class="contact-form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   `;
   footerSection.appendChild(modalPanel);
   wireContactForm(document.getElementById('contact-modal-form'));
 
   const closeBtn = modalPanel.querySelector('.contact-modal-close');
+  const PANEL_MS = 550;
   let lastFocusedEl = null;
+  let isOpen = false;
+  let closeTimer = null;
 
   const onModalKeydown = (e) => {
     if (e.key === 'Escape') {
@@ -327,18 +332,41 @@ if (contactTriggers.length && footerSection) {
   };
 
   function openContactModal() {
+    if (isOpen) return;
+    isOpen = true;
+    window.clearTimeout(closeTimer);
     lastFocusedEl = document.activeElement;
-    dimOverlay.hidden = false;
-    modalPanel.hidden = false;
-    footerSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    closeBtn.focus();
+    footerSection.classList.add('is-contact-open');
+    dimOverlay.setAttribute('aria-hidden', 'false');
+    modalPanel.setAttribute('aria-hidden', 'false');
+    dimOverlay.style.pointerEvents = 'none';
+    footerSection.scrollIntoView({ behavior: 'instant', block: 'end' });
+    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onModalKeydown);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        dimOverlay.classList.add('is-open');
+        modalPanel.classList.add('is-open');
+        modalPanel.focus();
+      });
+    });
+    window.setTimeout(() => {
+      dimOverlay.style.pointerEvents = '';
+    }, PANEL_MS);
   }
 
   function closeContactModal() {
-    dimOverlay.hidden = true;
-    modalPanel.hidden = true;
+    if (!isOpen) return;
+    isOpen = false;
+    dimOverlay.classList.remove('is-open');
+    modalPanel.classList.remove('is-open');
+    document.body.style.overflow = '';
     document.removeEventListener('keydown', onModalKeydown);
+    closeTimer = window.setTimeout(() => {
+      footerSection.classList.remove('is-contact-open');
+      dimOverlay.setAttribute('aria-hidden', 'true');
+      modalPanel.setAttribute('aria-hidden', 'true');
+    }, PANEL_MS);
     if (lastFocusedEl) lastFocusedEl.focus();
   }
 
