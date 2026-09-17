@@ -19,3 +19,4 @@ images/contact
 # Raw client asset drops (source material, not site assets) — processed
 # outputs get copied into images/ and video/ where they belong.
 /restantes
+/assets
